@@ -999,19 +999,18 @@
               height: 165px;
               font-size: 12px;
               float: left;
-              padding-left: 20px;
+              text-align: center; 
+              /* padding-left: 20px; */
               border-bottom: 1px solid #eee;
               cursor: pointer; }
               #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 span {
                 display: block;
-                width: 70px;
-                margin: 50px 0 0 34px; }
+                width: 70px; }
               #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 p {
                 text-align: center;
                 color: #fff;
                 background: #FFE53A;
-                width: 50px;
-                margin: 10px auto 0; }
+                width: 50px;}
       #container .wrap #detail #comment .ask {
         width: 980px;
         float: right;

@@ -44,15 +44,24 @@
 
 // 导航栏hover
 (function(){
-  $('#header').on('mouseover', '.navList>li', function(e){  
+  $('#header').on('mouseenter', '.navList>li', function(e){  
     $target = $(e.target)
+    // console.log( $target.find('ul') );
     $target.children().show()  // 或者是 $target.find('ul').show()
     
   });
-
-  $('#header').on('mouseout', '.navList>li', function(e){  
+  // $('#header').on('mousemove', '.navList>li', function(e){  
+  //   $target = $(e.target)
+  //   console.log( $('.navList>li').children()  );  //  ==   $target
+  // });
+  $('#header').on('mouseleave', '.navList', function(e){  
     $target = $(e.target)
-    $target.children().hide()
+    console.log($target.context.className);
+    let classList = [...$target.context.classList]
+    if (classList.includes('class1') || classList.includes('class2')) {
+    $('.navList>li ul').hide()
+
+    }
   })
 
     

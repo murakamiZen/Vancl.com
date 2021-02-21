@@ -75,14 +75,14 @@ define(function (){
           <ul class="navList">
             <li>首页 </li>
 
-            <li class="fleece1">摇粒绒 
-              <ul class="fleece">
+            <li class="class1 fleece1">摇粒绒 
+              <ul class="class2 fleece">
                 <li>摇粒绒</li>
                 <li>防羊羔绒</li>
               </ul>
             </li>
-            <li class="business1">商务衬衫 
-              <ul class="business">
+            <li class="class1 business1">商务衬衫 
+              <ul class="class2 business">
                 <li>长袖免烫</li>
                 <li>舒适商务</li>
                 <li>高支衬衫</li>
@@ -90,8 +90,8 @@ define(function (){
                 <li>短袖桑蚕丝</li>
               </ul>
             </li>
-            <li class="relax1">休闲衬衫 
-              <ul class="relax">
+            <li class="class1 relax1">休闲衬衫 
+              <ul class="class2 relax">
                 <li>牛津纺</li>
                 <li>法兰绒</li>
                 <li>灯芯绒</li>
@@ -103,16 +103,16 @@ define(function (){
                 <li>短袖休闲衬衫</li>
               </ul>
             </li>
-            <li class="sweater1">卫衣 
-              <ul class="sweater">
+            <li class="class1 sweater1">卫衣 
+              <ul class="class2 sweater">
                 <li>时尚款</li>
                 <li>开衫</li>
                 <li>圆领</li>
                 <li>连帽</li>
               </ul>
             </li>
-            <li class="coat1">外套 
-              <ul class="coat">
+            <li class="class1 coat1">外套 
+              <ul class="class2 coat">
                 <li>羽绒服</li>
                 <li>大衣</li>
                 <li>夹克</li>
@@ -121,8 +121,8 @@ define(function (){
                 <li>冲锋衣</li>
               </ul>
             </li>
-            <li class="knitwear1">针织衫 
-              <ul class="knitwear">
+            <li class="class1 knitwear1">针织衫 
+              <ul class="class2 knitwear">
                 <li>圆领</li>
                 <li>V领开衫</li>
                 <li>polo领</li>
@@ -130,8 +130,8 @@ define(function (){
                 <li>开衫</li>
               </ul>
             </li>
-            <li class="pants1">裤装 
-              <ul class="pants">
+            <li class="class1 pants1">裤装 
+              <ul class="class2 pants">
                 <li>牛仔裤</li>
                 <li>休闲裤</li>
                 <li>针织裤</li>
@@ -141,8 +141,8 @@ define(function (){
                 <li>半裙</li>
               </ul>
             </li>
-            <li class="shoe1">鞋 
-              <ul class="shoe">
+            <li class="class1 shoe1">鞋 
+              <ul class="class2 shoe">
                 <li>帆布鞋</li>
                 <li>休闲鞋</li>
                 <li>运动鞋</li>
@@ -152,8 +152,8 @@ define(function (){
                 <li>女鞋</li>
               </ul>
             </li>
-            <li class="furniture1">家具配饰 
-              <ul class="furniture">
+            <li class="class1 furniture1">家具配饰 
+              <ul class="class2 furniture">
                 <li>袜品</li>
                 <li>内衣</li>
                 <li>家居服</li>
