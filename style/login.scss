@@ -18,11 +18,14 @@
 .login .tag .normal{width: 200px;height: 35px; line-height: 35px;float: left;text-align: center;background: #b42025;color: #fff;font-weight: bolder;}
 .login .tag li{width: 200px;height: 35px;line-height: 35px;float: left;text-align: center;background: #f5f5f5;color: #656565;cursor: pointer;font-size: 14px;}
 .login .userInfo{width: 415px;height: 230px;padding: 10px 20px 10px;}
-.login .userInfo .user input{height: 45px;line-height: 45px;color: #acacac;width: 360px;text-align: left;font-size: 14px;text-indent: 10px;background: #fff;border: 1px solid #cbcbcb;margin-top: 30px;}
-.login .userInfo .pass input{height: 45px;line-height: 45px;color: #acacac;width: 360px;text-align: left;font-size: 14px;text-indent: 10px;background: #fff;border: 1px solid #cbcbcb;margin-top: 20px;}
+.login .userInfo input{height: 45px;line-height: 45px;color: #acacac;width: 360px;text-align: left;font-size: 14px;text-indent: 10px;background: #fff;border: 1px solid #cbcbcb;margin-top: 30px;}
+
 .login .userInfo .btn{width: 360px;overflow: hidden;}
 .login .userInfo .btn .forget{width:56px;height:30px;color: #b42025;font-size: 14px;font-weight: bolder;text-align: right;line-height: 30px;float: right;margin: 14px 0 0 0;}
-.login .userInfo .btn .vanclLogin{width: 360px;display: block;height: 45px;line-height: 45px;background: #b42025;color: #fff;text-align: center;font-size: 20px;margin: 45px 0 0 0;}
+.login .userInfo .btn #vanclLogin{width: 360px;display: block;height: 45px;line-height: 45px;background: #b42025;text-align: center;font-size: 20px;margin: 45px 0 0 0;border:none;}
+.login .userInfo .btn #vanclLogin a {
+  color: #fff;
+}
 
 .login .lines{border-bottom: 1px dotted #909090;width: 100%;height: 1px;overflow: hidden;margin: 30px 0 0 0;margin-top: 70px;}
 

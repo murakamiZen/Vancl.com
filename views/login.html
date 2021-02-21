@@ -6,7 +6,8 @@
   <title>登录</title>
   <link rel="stylesheet" href="./style/reset.css">
   <link rel="stylesheet" href="./style/login.css">
-  <script src="./script/require.2.1.9.js" defer async = 'true' data-main = './script/main3.js'></script>
+  <!-- <script src="./script/require.2.1.9.js" defer async = 'true' data-main = './script/main.js'></script> -->
+
 </head>
 <body>
   
@@ -23,25 +24,27 @@
     <div class="wrapHeader">
       <h3>
         <span>凡客 Vancl登录</span>
-        <span>没有账户免费<a class="register" href="#">注册</a></span>
+        <span>没有账户免费<a class="register" href="./register.html" >注册</a></span>
       </h3>
     </div>
     <!-- 登录块广告 -->
     <div class="advertise"><img src="../image/loginBig.jpg" alt=""></div>
     <!-- 登录块输入栏 -->
-    <div class="login">
+    <form class="login">
       <ul class="tag">
         <li class="normal">普通登录</li>
         <li>快速登录</li>
       </ul>
       <div class="userInfo">
-        <div class="user"><input type="text" name="username" placeholder="请输入用户名">
-        </div>
-        <div class="pass"><input type="text" name="password" placeholder="请输入密码">
-        </div>
+        <input id="user" type="text" name="username" placeholder="请输入用户名">
+        
+        <input id="pass" type="text" name="password" placeholder="请输入密码">
+        
         <div class="btn">
           <a href="#" class="forget">找回密码</a>
-          <a href="#" class="vanclLogin">登录</a>
+          <button id="vanclLogin"> 
+            <a href="" class="logSuccess">登录</a> 
+          </button>
         </div>
       </div>
       <div class="lines"></div>
@@ -54,7 +57,7 @@
         <a href="#" class="l360"></a>
         <a href="#" class="wb"></a>
       </div>
-    </div>
+    </form>
   </div>
   <!-- 底部版权 -->
   <div class="bottom">
@@ -66,6 +69,10 @@
       <a href="#" class="bottom4"></a>
     </div>
   </div>
+
+<script src="./script/jquery-1.8.3.js"></script>
+<script src="./script/utils.js"></script>
+<script src="./script/login.js"></script>
 
 </body>
 </html>
