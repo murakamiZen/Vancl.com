@@ -149,7 +149,8 @@
               margin-left: 55px;
               padding: 5px 10px;
               background: red;
-              border: none; }
+              border: none;
+              cursor: pointer; }
 
 /* 导航栏 */
 #nav .nav-main {
@@ -329,10 +330,30 @@
     height: 260px;
     padding: 0px;
     float: left; }
-    .goods-con .list .listItem img {
+    .goods-con .list .listItem .img {
       width: 224px;
       height: 224px;
-      margin: 0 0 0 20px; }
+      margin: 0 0 0 20px;
+      position: relative; }
+      .goods-con .list .listItem .img img {
+        width: 224px;
+        height: 224px; }
+      .goods-con .list .listItem .img .addGoods {
+        width: 112px;
+        height: 30px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -56px;
+        margin-top: -15px;
+        color: #b80001;
+        border: 1px solid red;
+        text-align: center;
+        line-height: 30px;
+        background-color: lightcoral;
+        display: none; }
+    .goods-con .list .listItem a:hover .addGoods {
+      display: block; }
     .goods-con .list .listItem h3 {
       height: 17px;
       line-height: 17px;

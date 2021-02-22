@@ -28,6 +28,7 @@ text-align: center;width: 176px;}
 .cartProduct{margin-top: 10px;}
 .cartProduct table{width: 980px;color: #333;border: 1px solid #DCDFE4;border-collapse: separate;}
 .cartProduct table td.photo{width: 90px;}
+.cartProduct table td.photo img{width: 50px;height: 50px;}
 .cartProduct table td img{border: 1px solid #C8C8C8;}
 .cartProduct thead{background-color: #eee;}
 .cartProduct thead tr{width: 980px;}
@@ -48,8 +49,8 @@ text-align: center;width: 176px;}
 .cartProduct tbody .num{width: 100px;}
 .cartProduct tbody .num div{margin-left: 27px;}
 .cartProduct tbody .num input{margin: 0 4px;width: 30px;height: 18px;border: 1px solid #D8D8D8;float: left;text-align: center;}
-.cartProduct tbody .num .decrease{float: left;}
-.cartProduct tbody .num .increase{float: left;}
+.cartProduct tbody .num .decrease{float: left;cursor: pointer;}
+.cartProduct tbody .num .increase{float: left;cursor: pointer;}
 .cartProduct tbody .operate{cursor: pointer;}
 
 .summary{padding: 12px 10px 10px 0;background: #FFFEF5;border: 1px solid #EBE5BB;line-height: 25px;width: 968px;position: relative;color: #333;margin-top: 14px; overflow: hidden;}

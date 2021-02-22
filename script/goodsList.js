@@ -7,12 +7,11 @@ define(['jquery'], function($){
       type: 'get',
       url: '../data/goodsList.json',
       success: function(arr){
-        console.log(arr)
         for ( var i = 0, len = arr.length; i < len; i++ ) {
           $(`
             <li class="listItem">
-              <a href="./goodsDetail.html?${arr[i].id}"><img src="${arr[i].imgurl}" alt=""></a>
-              <h3><a href="#">${arr[i].title}</a></h3>
+              <a href="#"><div class="img"><img src="${arr[i].imgurl}" alt=""><div class="addGoods" data-id="${arr[i].id}">加入购物车</div></div></a>
+              <h3><a href="./goodsDetail.html">${arr[i].title}</a></h3>
               <div class="itemPrice">
                 <span>售价￥${arr[i].originPrice}</span>
                 <span>充值购买相当于￥${arr[i].salePrice}</span>
@@ -22,10 +21,42 @@ define(['jquery'], function($){
         }
       },
       error: function(msg){
-        console.log(msg);
+        console.log(msg)
       }
     })
   }
+    // 数据加载完成后点击加入购物车添加事件
+    $('.list').on('click','.listItem .addGoods',function (){
+      // 存储商品id和数量
+      // "goods"=>"[{'id':'abc4','num':2},{'id':'abc2','num':1}]"
+      var id = $(this).attr('data-id') //当前点击商品的id
+      var goodsArr = [] //购物车数据的数组
+      if (localStorage.getItem('goods')) {
+        goodsArr = JSON.parse( localStorage.getItem('goods') )
+      }
+      var flag = false
+     
+      $.each(goodsArr, function(index, item){
+        if (item.id === id){
+        item.num++
+        flag = true
+        }
+      })  
+      if (!flag) {
+        goodsArr.push({"id":id,"num":1})
+        console.log(111);
+        console.log(goodsArr);
+      }
+      // 数据更新到本地存储
+      localStorage.setItem('goods', JSON.stringify(goodsArr))
+      alert('加入购物车成功！')
+    })
+
+    // 点击商品图片下面标题进入详情页   
+    $('.list').on('click','.listItem h3',function (){
+      $('.listItem h3 a').href = './goodsDetail.html'
+    })
+   
   // 头部添加
   function header(){
     $(`
@@ -81,7 +112,7 @@ define(['jquery'], function($){
                     <span>共计(未计算促销折扣)</span> <br>
                     <span>￥158</span>
                   </div>
-                  <button>查看购物车(1件)</button>
+                  <button class="checkCart">查看购物车(1件)</button>
                 </div>
               </div>
             </div>   
@@ -93,16 +124,16 @@ define(['jquery'], function($){
         <div class="nav-main">
           <a href="#"></a>
           <ul class="navList">
-            <li>首页 </li>
+            <li class="home">首页 </li>
 
             <li class="fleece1">摇粒绒 
-              <ul class="fleece">
+              <ul class="class2 fleece">
                 <li>摇粒绒</li>
                 <li>防羊羔绒</li>
               </ul>
             </li>
             <li class="business1">商务衬衫 
-              <ul class="business">
+              <ul class="class2 business">
                 <li>长袖免烫</li>
                 <li>舒适商务</li>
                 <li>高支衬衫</li>
@@ -111,7 +142,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="relax1">休闲衬衫 
-              <ul class="relax">
+              <ul class="class2 relax">
                 <li>牛津纺</li>
                 <li>法兰绒</li>
                 <li>灯芯绒</li>
@@ -124,7 +155,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="sweater1">卫衣 
-              <ul class="sweater">
+              <ul class="class2 sweater">
                 <li>时尚款</li>
                 <li>开衫</li>
                 <li>圆领</li>
@@ -132,7 +163,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="coat1">外套 
-              <ul class="coat">
+              <ul class="class2 coat">
                 <li>羽绒服</li>
                 <li>大衣</li>
                 <li>夹克</li>
@@ -142,7 +173,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="knitwear1">针织衫 
-              <ul class="knitwear">
+              <ul class="class2 knitwear">
                 <li>圆领</li>
                 <li>V领开衫</li>
                 <li>polo领</li>
@@ -151,7 +182,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="pants1">裤装 
-              <ul class="pants">
+              <ul class="class2 pants">
                 <li>牛仔裤</li>
                 <li>休闲裤</li>
                 <li>针织裤</li>
@@ -162,7 +193,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="shoe1">鞋 
-              <ul class="shoe">
+              <ul class="class2 shoe">
                 <li>帆布鞋</li>
                 <li>休闲鞋</li>
                 <li>运动鞋</li>
@@ -173,7 +204,7 @@ define(['jquery'], function($){
               </ul>
             </li>
             <li class="furniture1">家具配饰 
-              <ul class="furniture">
+              <ul class="class2 furniture">
                 <li>袜品</li>
                 <li>内衣</li>
                 <li>家居服</li>
@@ -196,6 +227,7 @@ define(['jquery'], function($){
       </div> 
     `).appendTo('#header')
   }
+      
   // 尾部添加
   function footer(){
     $(`
@@ -250,6 +282,136 @@ define(['jquery'], function($){
     header: header
   }
 });
+
+
+
+// 登录注册跳转
+(function loginRegister(){
+  $('#header').on('click', '.login', ()=>{
+    location.href = './login.html'
+  })
+
+  $('#header').on('click', '.register', ()=>{
+    location.href = './register.html'
+  })
+})();
+
+// 微信hover
+(function wechat(){
+  $('#header').on('mouseenter', '.wechat', function(){        
+    $qrcode = $('.qrcode')
+    $qrcode.show(); 
+  });
+
+  $('#header').on('mouseleave', '.wechat', function(){
+    $qrcode = $('.qrcode')
+    $qrcode.hide();  
+  })
+})();
+
+
+// 购物车hover
+(function shoppingCart(){
+  $('#header').on('click', '.checkCart', ()=>{
+    location.href = './shoppingCar.html'
+  })
+
+  $('#header').on('mouseenter', '.shopCart', function(){        
+    $('.cartGoods').show(); 
+  })
+  $('#header').on('mouseleave', '.shopCart', function(){
+    $('.cartGoods').hide(); 
+  })
+
+  $('#header').on('mouseleave', '.cartGoods', function(){
+    $('.cartGoods').hide(); 
+  })
+  $('#header').on('mouseenter', '.cartGoods', function(){        
+    $('.cartGoods').show(); 
+  })
+  
+})();
+
+
+
+// 导航栏hover
+(function navigator(){
+  $('#header').on('click', '.home', ()=>{
+    location.href = './index.html'
+  })
+
+  $('#header').on('click', '.class2 li', ()=>{
+      location.href = './goodsList.html'
+  })
+
+  $('#header').on('mouseenter', '.navList>li', function(e){ 
+    $target = $(e.target)
+    $target.children().show()  // 或者是 $target.find('ul').show()
+  })
+  $('#header').on('mouseleave', '.navList>li', function(){     
+      $('.navList>li ul').hide()
+  })
+
+  $('#header').on('mouseenter', '.navList ul', function(e){  
+    $target = $(e.target)
+    $target.show()
+  })
+  $('#header').on('mouseleave', '.navList ul', function(){  
+    $('.navList>li ul').hide()
+  })
+})();
+
+
+// 回到顶部
+(function toTop(){
+  $toTop = $('.toTop')
+  $timer = null
+  // 判断logo显示
+  $(window).scroll( function(e){
+    if($(window).scrollTop() >= 200){
+      $toTop.css('display','block')
+    }   
+  });
+  $(window).scroll( function(){
+    if($(window).scrollTop() < 200){
+      $toTop.css('display','none')
+    } 
+  });
+
+  // 获取滚动条位置
+  var getTop = ()=>{
+    getScrollTop = document.documentElement.scrollTop == 0
+    ? document.body.scrollTop
+    : document.documentElement.scrollTop
+    return getScrollTop
+  }
+  // 设置滚动条位置
+  var setTop = (top)=>{
+      document.documentElement.scrollTop == 0
+      ? document.body.scrollTop = top
+      : document.documentElement.scrollTop = top
+  }
+  // 滚动条运动 
+  $toTop.click(()=>{ 
+      $timer = setInterval(() => {
+          var backTop = getTop()
+          var speedTop = backTop / 10
+          setTop(backTop - speedTop)
+          // 检测鼠标滚轮是否滚动
+          $(window).on( 'mousewheel',(delta)=>{
+            if(delta != 0){
+              clearInterval($timer)
+            }
+          })
+          if(backTop == 0){
+            clearInterval($timer)
+          }
+      }, 20);
+  }) 
+  
+})();
+
+
 
 
 

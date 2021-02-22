@@ -1,6 +1,18 @@
 
+// 登录注册跳转
+(function loginRegister(){
+  
+  $('#header').on('click', '.login', ()=>{
+    location.href = './login.html'
+  })
+
+  $('#header').on('click', '.register', ()=>{
+    location.href = './register.html'
+  })
+})();
+
 // 微信hover
-(function(){
+(function wechat(){
 
   $('#header').on('mouseenter', '.wechat', function(){        
     $qrcode = $('.qrcode')
@@ -14,7 +26,7 @@
 })();
 
 // 购物车hover
-(function(){
+(function shoppingCart(){
 
   $('#header').on('click', '.checkCart', ()=>{
     location.href = './shoppingCar.html'
@@ -39,9 +51,13 @@
 
 
 // 导航栏hover
-(function(){
+(function navigator(){
   $('#header').on('click', '.home', ()=>{
     location.href = './index.html'
+  })
+
+  $('#header').on('click', '.class2 li', ()=>{
+      location.href = './goodsList.html'
   })
 
   $('#header').on('mouseenter', '.navList>li', function(e){  
