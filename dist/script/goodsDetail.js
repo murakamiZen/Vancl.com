@@ -68,12 +68,17 @@
   })
 })();
 
-// 导航栏hover
+// 导航栏
 (function navigator(){
+  $('#header').on('click', '.home', ()=>{
+    location.href = './index.html'
+  })
+
   $('#header').on('mouseenter', '.navList>li', function(e){  
     $target = $(e.target)
     $target.children().show()  // 或者是 $target.find('ul').show()
-  });
+  })
+
   $('#header').on('mouseleave', '.navList>li', function(e){  
     $target = $(e.target)
     $target.find('ul').hide()

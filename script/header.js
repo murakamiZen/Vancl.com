@@ -1,11 +1,5 @@
 define(function (){
-  // function header(){
-  //   $('#header').load('header.html')
-  // }
-  // function footer(){
-  //   $('#footer').load('footer.html')
-  // }
-  
+ 
   // 头部添加
   function header(){
     $(`
@@ -73,7 +67,7 @@ define(function (){
         <div class="nav-main">
           <a href="#"></a>
           <ul class="navList">
-            <li>首页 </li>
+            <li class="home">首页 </li>
 
             <li class="class1 fleece1">摇粒绒 
               <ul class="class2 fleece">

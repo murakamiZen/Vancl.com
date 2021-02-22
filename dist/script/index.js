@@ -15,11 +15,14 @@
 
 // 购物车hover
 (function(){
-  
+  $('#header').on('click', '.home', ()=>{
+    location.href = './index.html'
+  })
+
   $('#header').on('mouseenter', '.shopCart', function(){        
     $cartGoods = $('.cartGoods')
     $cartGoods.show(); 
-  });
+  })
 
   $('#header').on('mouseleave', '.shopCart', function(){
     $cartGoods = $('.cartGoods')
@@ -30,41 +33,16 @@
 
 
 // 导航栏hover
-// (function(){
-//   $('#header').on('mouseenter', '.navList>li', function(e){  
-//     $target = $(e.target)
-//     $target.children().show()  // 或者是 $target.find('ul').show()
-//   });
-//   $('#header').on('mouseleave', '.navList ul', function(e){  
-//     $target = $(e.target)
-//     $target.children().hide()
-    
-//   })
-// })();
-
-// 导航栏hover
 (function(){
   $('#header').on('mouseenter', '.navList>li', function(e){  
     $target = $(e.target)
-    // console.log( $target.find('ul') );
     $target.children().show()  // 或者是 $target.find('ul').show()
-    
   });
-  // $('#header').on('mousemove', '.navList>li', function(e){  
-  //   $target = $(e.target)
-  //   console.log( $('.navList>li').children()  );  //  ==   $target
-  // });
-  $('#header').on('mouseleave', '.navList', function(e){  
+  
+  $('#header').on('mouseleave', '.navList ul', function(e){  
     $target = $(e.target)
-    console.log($target.context.className);
-    let classList = [...$target.context.classList]
-    if (classList.includes('class1') || classList.includes('class2')) {
     $('.navList>li ul').hide()
-
-    }
   })
-
-    
 })();
 
 
@@ -117,9 +95,6 @@
   }
 })();
 
-
-
-
 // 底部删除悬浮栏
 (function delFloat(){
   $del = $('.del')
@@ -128,3 +103,15 @@
     $scan.remove()
   })
 })();
+
+// 跳转到详情页
+(function toDetail(){
+  $imgs = $('#goods img')
+  $imgs.each( ()=>{
+    $(this).click( ()=>{
+      location.href = './goodsDetail.html'
+    })
+  })
+})();
+
+
