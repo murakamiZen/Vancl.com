@@ -143,12 +143,13 @@
             #search .srh-main .content .cartGoods .content .total div {
               float: left;
               font-size: 12px; }
-            #search .srh-main .content .cartGoods .content .total button {
+            #search .srh-main .content .cartGoods .content .total .checkCart {
               float: left;
               margin-left: 55px;
               padding: 5px 10px;
               background: red;
-              border: none; }
+              border: none;
+              cursor: pointer; }
 
 /* 导航栏 */
 #nav .nav-main {

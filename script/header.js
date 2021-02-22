@@ -55,7 +55,7 @@ define(function (){
                     <span>共计(未计算促销折扣)</span> <br>
                     <span>￥158</span>
                   </div>
-                  <button>查看购物车(1件)</button>
+                  <button class="checkCart">查看购物车(1件)</button>
                 </div>
               </div>
             </div>   

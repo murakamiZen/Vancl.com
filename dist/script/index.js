@@ -15,31 +15,49 @@
 
 // 购物车hover
 (function(){
-  $('#header').on('click', '.home', ()=>{
-    location.href = './index.html'
+
+  $('#header').on('click', '.checkCart', ()=>{
+    location.href = './shoppingCar.html'
   })
 
   $('#header').on('mouseenter', '.shopCart', function(){        
-    $cartGoods = $('.cartGoods')
-    $cartGoods.show(); 
+    $('.cartGoods').show(); 
+  })
+  $('#header').on('mouseleave', '.shopCart', function(){
+    $('.cartGoods').hide(); 
   })
 
-  $('#header').on('mouseleave', '.shopCart', function(){
-    $cartGoods = $('.cartGoods')
-    $cartGoods.hide();  
+  $('#header').on('mouseleave', '.cartGoods', function(){
+        $('.cartGoods').hide(); 
+    })
+  $('#header').on('mouseenter', '.cartGoods', function(){        
+    $('.cartGoods').show(); 
   })
+  
 })();
 
 
 
 // 导航栏hover
 (function(){
+  $('#header').on('click', '.home', ()=>{
+    location.href = './index.html'
+  })
+
   $('#header').on('mouseenter', '.navList>li', function(e){  
     $target = $(e.target)
     $target.children().show()  // 或者是 $target.find('ul').show()
-  });
-  
-  $('#header').on('mouseleave', '.navList ul', function(e){  
+  })
+  $('#header').on('mouseleave', '.navList>li', function(e){  
+    $target = $(e.target)
+    $('.navList>li ul').hide()
+  })
+
+  $('#header').on('mouseenter', '.navList ul li', function(e){  
+    $target = $(e.target)
+    $target.show()
+  })
+  $('#header').on('mouseleave', '.navList ul li', function(e){  
     $target = $(e.target)
     $('.navList>li ul').hide()
   })
@@ -106,9 +124,9 @@
 
 // 跳转到详情页
 (function toDetail(){
-  $imgs = $('#goods img')
+  $imgs = $('.goods-main img')
   $imgs.each( ()=>{
-    $(this).click( ()=>{
+    $imgs.click( ()=>{
       location.href = './goodsDetail.html'
     })
   })

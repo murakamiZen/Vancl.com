@@ -166,12 +166,13 @@
               float: left;
               font-size: 12px;
             }
-            button{
+            .checkCart{
               float: left;
               margin-left: 55px;
               padding: 5px 10px;
               background: red;
               border: none;
+              cursor: pointer;
             }
           }
         }
