@@ -124,7 +124,7 @@ $(function (){
     // 商品数量减1
     $('.cartProduct table').on('click','tbody .num .decrease',function (){
       $num = Number($(this).siblings('input').val()) - 1
-      $eachPrice = parseInt($(this).closest('.num').siblings('.price').text().slice(1))
+      $eachPrice = Number($(this).closest('.num').siblings('.price').text().slice(1))
       $subtotal = ($num * $eachPrice).toFixed(1)
       $flag = $(this).closest('.num').siblings('.choose').children('input')
       $count = $('.summary .total em').text().slice(1)
@@ -172,10 +172,10 @@ $(function (){
     // 商品数量加1
     $('.cartProduct table').on('click','tbody .num .increase',function (){
       $num = Number($(this).siblings('input').val()) + 1
-      $eachPrice = parseInt($(this).closest('.num').siblings('.price').text().slice(1))
+      $eachPrice = Number($(this).closest('.num').siblings('.price').text().slice(1))
       $subtotal = ($num * $eachPrice).toFixed(1)
       $flag = $(this).closest('.num').siblings('.choose').children('input')
-      $count = parseInt($('.summary .total em').text().slice(1))
+      $count = Number($('.summary .total em').text().slice(1))
       $numTotal = parseInt($('.summary .bar span em').text())
 
       $(this).siblings('input').val($num)
@@ -237,7 +237,7 @@ $(function (){
       $.each($checks, function (index, item){
         if (item.checked){
           // 关联单行复选框和金额总计(此处注意仅需遍历选中的小计价格累加)
-          totalPrice += parseInt($(this).parent().siblings('.subtotal').text().slice(1))
+          totalPrice += Number($(this).parent().siblings('.subtotal').text().slice(1))
           // 关联单行复选框和数量总计
           totalNum += parseInt($(this).parent().siblings('.num').find('input').val())
           flag = true
@@ -278,7 +278,7 @@ $(function (){
       var totalNum = 0
       // 关联删除1和金额总计
       $.each($subtotal, function (index, item){
-        totalPrice += parseInt($(item).text().slice(1))
+        totalPrice += Number($(item).text().slice(1))
       })
       $('.summary .total em').text('￥'+totalPrice)
       // 关联删除1和数量总计
@@ -322,30 +322,35 @@ $(function (){
         flag = true
         console.log(flag);
       }
-      if (flag){
-        $allChoose1.prop('checked',false)
-        $allChoose2.prop('checked',false)
-      } else {
-        $.each($checks, function (index, item){
-          $(this).prop('checked',true)
+
+      // 判断用户点击删除2的时候是否有勾选
+      if (!$checks.is(':checked')) {  // 用户未勾选任一商品
+        alert('请先选择要删除的商品')
+      } else{ // 用户勾选了商品
+        if (flag){ // 删除后购物车无商品
+          $allChoose1.prop('checked',false)
+          $allChoose2.prop('checked',false)
+        } else { // 删除后购物车还有商品
+          $.each($checks, function (index, item){
+            $(this).prop('checked',true)
+          })
+          $allChoose1.prop('checked',true)
+          $allChoose2.prop('checked',true)
+        }
+
+        // 关联删除2和金额总计
+        $subtotal = $('tbody .subtotal') // 此处必须在删除后获取节点！
+        $num = $('tbody .num input')
+        $.each($subtotal, function (index, item){
+          totalPrice += Number($(item).text().slice(1))
         })
-        $allChoose1.prop('checked',true)
-        $allChoose2.prop('checked',true)
+        $('.summary .total em').text('￥'+totalPrice)
+        // 关联删除2和数量总计
+        $.each($num, function (index, item){
+          totalNum += parseInt($(item).val())
+        })
+        $('.summary .bar span em').text(totalNum)
       }
-      
-      
-      // 关联删除2和金额总计
-      $subtotal = $('tbody .subtotal') // 此处必须在删除后获取节点！
-      $num = $('tbody .num input')
-      $.each($subtotal, function (index, item){
-        totalPrice += parseInt($(item).text().slice(1))
-      })
-      $('.summary .total em').text('￥'+totalPrice)
-      // 关联删除2和数量总计
-      $.each($num, function (index, item){
-        totalNum += parseInt($(item).val())
-      })
-      $('.summary .bar span em').text(totalNum)
     })
       
     // 结算框数量与金额总计
@@ -355,7 +360,7 @@ $(function (){
     $.each($checks, function (index, item){
       if (item.checked){
         // 关联单行复选框和金额总计(此处注意仅需遍历选中的小计价格累加)
-        totalPrice += parseInt($(this).parent().siblings('.subtotal').text().slice(1))
+        totalPrice += Number($(this).parent().siblings('.subtotal').text().slice(1))
         // 关联单行复选框和数量总计
         totalNum += parseInt($(this).parent().siblings('.num').find('input').val())
       }

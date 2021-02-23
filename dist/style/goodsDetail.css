@@ -579,7 +579,7 @@
       #container .wrap #detail .content .pic {
         width: 400px;
         height: 400px;
-        margin: 10px 75px;
+        margin: 10px 57px;
         float: left;
         border: 1px solid #000;
         position: relative; }
@@ -602,8 +602,23 @@
           background-color: #e6eaf3;
           border: 1px solid White;
           display: none; }
+      #container .wrap #detail .content .bigPic {
+        width: 400px;
+        height: 405px;
+        position: absolute;
+        left: 593px;
+        top: 6px;
+        z-index: 999;
+        overflow: hidden;
+        display: none; }
+        #container .wrap #detail .content .bigPic img {
+          width: 800px;
+          height: 800px;
+          position: absolute;
+          left: 0;
+          top: 0; }
       #container .wrap #detail .content .rightContent {
-        width: 566px;
+        width: 610px;
         height: 415px;
         float: left;
         border: 1px solid #000; }
@@ -865,21 +880,6 @@
               margin: 3px 7px;
               color: #fff;
               cursor: pointer; }
-      #container .wrap #detail .content .bigPic {
-        width: 400px;
-        height: 400px;
-        position: absolute;
-        left: 590px;
-        top: 10px;
-        z-index: 999;
-        overflow: hidden;
-        display: none; }
-        #container .wrap #detail .content .bigPic img {
-          width: 800px;
-          height: 800px;
-          position: absolute;
-          left: 0;
-          top: 0; }
     #container .wrap #detail .introduce {
       margin-top: 30px; }
       #container .wrap #detail .introduce ul li {

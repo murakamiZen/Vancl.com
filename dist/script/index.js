@@ -57,30 +57,35 @@ $(function lazyLoad() {
 
 // 导航栏hover
 (function navigator(){
-  $('#header').on('click', '.home', ()=>{
+
+  $('.home').click( ()=>{
     location.href = './index.html'
   })
 
-  $('#header').on('click', '.class2 li', ()=>{
-      location.href = './goodsList.html'
+  $('.class2 li').click( ()=>{
+    location.href = './goodsList.html'
   })
 
-  $('#header').on('mouseenter', '.navList>li', function(e){  
-    $target = $(e.target)
-    $target.children().show()  // 或者是 $target.find('ul').show()
-  })
-  $('#header').on('mouseleave', '.navList>li', function(){ 
-    $('.navList>li ul').hide()
-  })
+  $('.navList .class1').hover(
+    function(e){
+      $target = $(e.target)
+      $target.children().show() 
+    },
+    function(){
+      $('.navList .class2').hide()
+    }
+  )
 
-  $('#header').on('mouseenter', '.navList ul li', function(e){  
-    $target = $(e.target)
-    $target.show()
-  })
-  $('#header').on('mouseleave', '.navList ul li', function(e){  
-    $target = $(e.target)
-    $('.navList>li ul').hide()
-  })
+  $('.navList .class2').hover(
+    function(e){
+      $target = $(e.target)
+      $target.show()
+    },
+    // function(e){
+    //   $('.navList .class2').hide()
+    // }
+  )
+  
 })();
 
 // 轮播图

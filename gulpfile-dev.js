@@ -58,7 +58,7 @@ task('image',async ()=>{
 task('reload',async ()=>{
   load.connect.server({
     root: './dist',//设置根目录
-    port: 8882,
+    port: 8883,
     livereload: true//开启自动刷新
   })
 })

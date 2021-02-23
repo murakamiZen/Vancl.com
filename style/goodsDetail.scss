@@ -694,7 +694,7 @@
         .pic{
           width: 400px;
           height: 400px;
-          margin: 10px 75px;
+          margin: 10px 57px;
           float: left;
           border: 1px solid #000;
           position: relative;
@@ -722,16 +722,34 @@
             display: none;
           }
         }
+        // 放大镜图片
+        .bigPic{
+          width: 400px;
+          height: 405px;
+          position: absolute;
+          left: 593px;
+          top: 6px;
+          z-index: 999;
+          overflow: hidden;
+          display: none;
+          img{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        } 
+
         // 右侧详细内容
         .rightContent{
-          width: 566px;
+          width: 610px;
           height: 415px;
           float: left;
           border: 1px solid #000;
           .pricearea{
             width: 561px;
             height: 56px;
-            // background: pink;
             color: #b81c22;
             .discount{
               display: inline;
@@ -1054,25 +1072,7 @@
               }
             }        
           }          
-        }
-        // 放大镜图片
-        .bigPic{
-          width: 400px;
-          height: 400px;
-          position: absolute;
-          left: 590px;
-          top: 10px;
-          z-index: 999;
-          overflow: hidden;
-          display: none;
-          img{
-            width: 800px;
-            height: 800px;
-            position: absolute;
-            left: 0;
-            top: 0;
-          }
-        }        
+        } 
       }
       // 产品属性说明
       .introduce{

@@ -10,7 +10,7 @@ define(['jquery'], function($){
         for ( var i = 0, len = arr.length; i < len; i++ ) {
           $(`
             <li class="listItem">
-              <a href="#"><div class="img"><img src="${arr[i].imgurl}"  alt="" ><div class="addGoods" data-id="${arr[i].id}">加入购物车</div></div></a>
+              <a href="javascript:void(0);"><div class="img"><img src="${arr[i].imgurl}"  alt="" ><div class="addGoods" data-id="${arr[i].id}">加入购物车</div></div></a>
               <h3><a href="./goodsDetail.html">${arr[i].title}</a></h3>
               <div class="itemPrice">
                 <span>售价￥${arr[i].originPrice}</span>
@@ -128,112 +128,6 @@ define(['jquery'], function($){
           </div>
         </div>
       </div>
-
-      <div id="nav">
-        <div class="nav-main">
-          <a href="#"></a>
-          <ul class="navList">
-            <li class="home">首页 </li>
-
-            <li class="fleece1">摇粒绒 
-              <ul class="class2 fleece">
-                <li>摇粒绒</li>
-                <li>防羊羔绒</li>
-              </ul>
-            </li>
-            <li class="business1">商务衬衫 
-              <ul class="class2 business">
-                <li>长袖免烫</li>
-                <li>舒适商务</li>
-                <li>高支衬衫</li>
-                <li>短袖免烫</li>
-                <li>短袖桑蚕丝</li>
-              </ul>
-            </li>
-            <li class="relax1">休闲衬衫 
-              <ul class="class2 relax">
-                <li>牛津纺</li>
-                <li>法兰绒</li>
-                <li>灯芯绒</li>
-                <li>水洗棉</li>
-                <li>易打理</li>
-                <li>麻棉系列</li>
-                <li>复古风系列</li>
-                <li>女款</li>
-                <li>短袖休闲衬衫</li>
-              </ul>
-            </li>
-            <li class="sweater1">卫衣 
-              <ul class="class2 sweater">
-                <li>时尚款</li>
-                <li>开衫</li>
-                <li>圆领</li>
-                <li>连帽</li>
-              </ul>
-            </li>
-            <li class="coat1">外套 
-              <ul class="class2 coat">
-                <li>羽绒服</li>
-                <li>大衣</li>
-                <li>夹克</li>
-                <li>西服</li>
-                <li>摇粒绒</li>
-                <li>冲锋衣</li>
-              </ul>
-            </li>
-            <li class="knitwear1">针织衫 
-              <ul class="class2 knitwear">
-                <li>圆领</li>
-                <li>V领开衫</li>
-                <li>polo领</li>
-                <li>高领</li>
-                <li>开衫</li>
-              </ul>
-            </li>
-            <li class="pants1">裤装 
-              <ul class="class2 pants">
-                <li>牛仔裤</li>
-                <li>休闲裤</li>
-                <li>针织裤</li>
-                <li>运动系列</li>
-                <li>沙滩裤</li>
-                <li>短裤</li>
-                <li>半裙</li>
-              </ul>
-            </li>
-            <li class="shoe1">鞋 
-              <ul class="class2 shoe">
-                <li>帆布鞋</li>
-                <li>休闲鞋</li>
-                <li>运动鞋</li>
-                <li>凉鞋</li>
-                <li>皮鞋</li>
-                <li>靴子</li>
-                <li>女鞋</li>
-              </ul>
-            </li>
-            <li class="furniture1">家具配饰 
-              <ul class="class2 furniture">
-                <li>袜品</li>
-                <li>内衣</li>
-                <li>家居服</li>
-                <li>连裤袜</li>
-                <li>家居鞋</li>
-                <li>床品件套</li>
-                <li>毯</li>
-                <li>被</li>
-                <li>围巾</li>
-                <li>枕</li>
-                <li>抱枕 </li>
-                <li>手机壳</li>
-                <li>箱包</li>
-                <li>裙装</li>
-                <li>马甲</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div> 
     `).appendTo('#header')
   }
       
@@ -343,35 +237,38 @@ define(['jquery'], function($){
 })();
 
 
-
 // 导航栏hover
 (function navigator(){
-  $('#header').on('click', '.home', ()=>{
+
+  $('.home').click( ()=>{
     location.href = './index.html'
   })
 
-  $('#header').on('click', '.class2 li', ()=>{
-      location.href = './goodsList.html'
+  $('.class2 li').click( ()=>{
+    location.href = './goodsList.html'
   })
 
-  $('#header').on('mouseenter', '.navList>li', function(e){ 
-    $target = $(e.target)
-    $target.children().show()  // 或者是 $target.find('ul').show()
-  })
-  $('#header').on('mouseleave', '.navList>li', function(){     
-      $('.navList>li ul').hide()
-  })
+  $('.navList .class1').hover(
+    function(e){
+      $target = $(e.target)
+      $target.children().show() 
+    },
+    function(){
+      $('.navList .class2').hide()
+    }
+  )
 
-  $('#header').on('mouseenter', '.navList ul', function(e){  
-    $target = $(e.target)
-    $target.show()
-  })
-  $('#header').on('mouseleave', '.navList ul', function(){  
-    $('.navList>li ul').hide()
-  })
+  $('.navList .class2').hover(
+    function(e){
+      $target = $(e.target)
+      $target.show()
+    },
+    // function(e){
+    //   $('.navList .class2').hide()
+    // }
+  )
+  
 })();
-
-
 
 
 
