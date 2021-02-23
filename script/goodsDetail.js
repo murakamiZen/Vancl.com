@@ -33,7 +33,7 @@
     // 给外面返回最新坐标
     return $flag
   });
-  // enter+click 实现：
+  // enter+click 来实现：
   // $tab.mouseenter( ()=>{
   //     $rightFloat.animate( {right: '0px'}, 'slow' )    
   // });
@@ -42,8 +42,22 @@
   // });
 })();
 
+
+// 登录注册跳转
+(function loginRegister(){
+  
+  $('#header').on('click', '.login', ()=>{
+    location.href = './login.html'
+  })
+
+  $('#header').on('click', '.register', ()=>{
+    location.href = './register.html'
+  })
+})();
+
 // 微信hover
 (function wechat(){
+
   $('#header').on('mouseenter', '.wechat', function(){        
     $qrcode = $('.qrcode')
     $qrcode.show(); 
@@ -56,34 +70,55 @@
 })();
 
 // 购物车hover
-(function shopCart(){
-  $('#header').on('mouseenter', '.shopCart', function(){        
-    $cartGoods = $('.cartGoods')
-    $cartGoods.show(); 
-  });
+(function shoppingCart(){
 
-  $('#header').on('mouseleave', '.shopCart', function(){
-    $cartGoods = $('.cartGoods')
-    $cartGoods.hide();  
+  $('#header').on('click', '.checkCart', ()=>{
+    location.href = './shoppingCar.html'
   })
+
+  $('#header').on('mouseenter', '.shopCart', function(){        
+    $('.cartGoods').show(); 
+  })
+  $('#header').on('mouseleave', '.shopCart', function(){
+    $('.cartGoods').hide(); 
+  })
+
+  $('#header').on('mouseleave', '.cartGoods', function(){
+        $('.cartGoods').hide(); 
+    })
+  $('#header').on('mouseenter', '.cartGoods', function(){        
+    $('.cartGoods').show(); 
+  })
+  
 })();
 
-// 导航栏
+// 导航栏hover
 (function navigator(){
   $('#header').on('click', '.home', ()=>{
     location.href = './index.html'
+  })
+
+  $('#header').on('click', '.class2 li', ()=>{
+      location.href = './goodsList.html'
   })
 
   $('#header').on('mouseenter', '.navList>li', function(e){  
     $target = $(e.target)
     $target.children().show()  // 或者是 $target.find('ul').show()
   })
-
   $('#header').on('mouseleave', '.navList>li', function(e){  
     $target = $(e.target)
-    $target.find('ul').hide()
+    $('.navList>li ul').hide()
   })
 
+  $('#header').on('mouseenter', '.navList ul li', function(e){  
+    $target = $(e.target)
+    $target.show()
+  })
+  $('#header').on('mouseleave', '.navList ul li', function(e){  
+    $target = $(e.target)
+    $('.navList>li ul').hide()
+  })
 })();
 
 // 放大镜

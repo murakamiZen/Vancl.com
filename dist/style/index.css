@@ -370,8 +370,14 @@
   #goods .goods-main img {
     float: left;
     cursor: pointer; }
+  #goods .goods-main .goodsList img {
+    width: 600px;
+    height: 875px; }
   #goods .goods-main .moreLlist li {
     float: left; }
+  #goods .goods-main .moreLlist img {
+    width: 600px;
+    height: 980px; }
   #goods .goods-main .recommend {
     width: 1200px;
     height: 1150px;
@@ -428,8 +434,8 @@
       padding: 40px 0; }
     #goods .goods-main .lowCloth .lowCloth1, #goods .goods-main .lowCloth .lowCloth2, #goods .goods-main .lowCloth .lowCloth3, #goods .goods-main .lowCloth .lowCloth4 {
       float: left;
-      width: 285px;
-      margin-right: 13px;
+      width: 282px;
+      margin-right: 11px;
       border: 1px solid #eee;
       padding-bottom: 10px; }
     #goods .goods-main .lowCloth h4 {

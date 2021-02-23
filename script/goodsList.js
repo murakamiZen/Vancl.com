@@ -10,7 +10,7 @@ define(['jquery'], function($){
         for ( var i = 0, len = arr.length; i < len; i++ ) {
           $(`
             <li class="listItem">
-              <a href="#"><div class="img"><img src="${arr[i].imgurl}" alt=""><div class="addGoods" data-id="${arr[i].id}">加入购物车</div></div></a>
+              <a href="#"><div class="img"><img src="${arr[i].imgurl}"  alt="" ><div class="addGoods" data-id="${arr[i].id}">加入购物车</div></div></a>
               <h3><a href="./goodsDetail.html">${arr[i].title}</a></h3>
               <div class="itemPrice">
                 <span>售价￥${arr[i].originPrice}</span>
@@ -25,37 +25,46 @@ define(['jquery'], function($){
       }
     })
   }
-    // 数据加载完成后点击加入购物车添加事件
-    $('.list').on('click','.listItem .addGoods',function (){
-      // 存储商品id和数量
-      // "goods"=>"[{'id':'abc4','num':2},{'id':'abc2','num':1}]"
-      var id = $(this).attr('data-id') //当前点击商品的id
-      var goodsArr = [] //购物车数据的数组
-      if (localStorage.getItem('goods')) {
-        goodsArr = JSON.parse( localStorage.getItem('goods') )
-      }
-      var flag = false
-     
-      $.each(goodsArr, function(index, item){
-        if (item.id === id){
-        item.num++
-        flag = true
-        }
-      })  
-      if (!flag) {
-        goodsArr.push({"id":id,"num":1})
-        console.log(111);
-        console.log(goodsArr);
-      }
-      // 数据更新到本地存储
-      localStorage.setItem('goods', JSON.stringify(goodsArr))
-      alert('加入购物车成功！')
+  // 图片延迟加载
+  $('.list').on('load', function(){
+    $(function() {
+      $("img").lazyload({
+        effect: "fadeIn"
+      })
     })
+  });
 
-    // 点击商品图片下面标题进入详情页   
-    $('.list').on('click','.listItem h3',function (){
-      $('.listItem h3 a').href = './goodsDetail.html'
-    })
+  // 数据加载完成后点击加入购物车添加事件
+  $('.list').on('click','.listItem .addGoods',function (){
+    // 存储商品id和数量
+    // "goods"=>"[{'id':'abc4','num':2},{'id':'abc2','num':1}]"
+    var id = $(this).attr('data-id') //当前点击商品的id
+    var goodsArr = [] //购物车数据的数组
+    if (localStorage.getItem('goods')) {
+      goodsArr = JSON.parse( localStorage.getItem('goods') )
+    }
+    var flag = false
+    
+    $.each(goodsArr, function(index, item){
+      if (item.id === id){
+      item.num++
+      flag = true
+      }
+    })  
+    if (!flag) {
+      goodsArr.push({"id":id,"num":1})
+      console.log(111);
+      console.log(goodsArr);
+    }
+    // 数据更新到本地存储
+    localStorage.setItem('goods', JSON.stringify(goodsArr))
+    alert('加入购物车成功！')
+  })
+
+  // 点击商品图片下面标题进入详情页   
+  $('.list').on('click','.listItem h3',function (){
+    $('.listItem h3 a').href = './goodsDetail.html'
+  })
    
   // 头部添加
   function header(){
@@ -281,6 +290,7 @@ define(['jquery'], function($){
     footer: footer,
     header: header
   }
+  
 });
 
 
@@ -360,6 +370,9 @@ define(['jquery'], function($){
     $('.navList>li ul').hide()
   })
 })();
+
+
+
 
 
 // 回到顶部

@@ -436,10 +436,20 @@
       float: left;
       cursor: pointer;
     }
+    .goodsList{
+      img{
+        width:600px;
+        height:875px;
+      }
+    }
     // 更多品类
     .moreLlist{
       li{
         float: left;
+      }
+      img{
+        width:600px;
+        height:980px;
       }
     }
     // 优选推荐
@@ -511,8 +521,8 @@
       }
       .lowCloth1, .lowCloth2, .lowCloth3, .lowCloth4{
         float: left;
-        width: 285px;
-        margin-right: 13px;
+        width: 282px;
+        margin-right: 11px;
         border: 1px solid #eee;
         padding-bottom: 10px;
       }

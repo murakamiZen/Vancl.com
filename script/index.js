@@ -1,4 +1,11 @@
 
+// 图片延迟加载
+$(function lazyLoad() {
+  $("img").lazyload({
+    effect: "fadeIn"
+  })
+});
+
 // 登录注册跳转
 (function loginRegister(){
   
@@ -48,8 +55,6 @@
   
 })();
 
-
-
 // 导航栏hover
 (function navigator(){
   $('#header').on('click', '.home', ()=>{
@@ -79,7 +84,6 @@
   })
 })();
 
-
 // 轮播图
 (function banner(){
   var swiper = new Swiper('.swiper-container', {
@@ -89,9 +93,7 @@
       prevEl: '.swiper-button-prev',
     },
   });
-
 })();
-
 
 // 回到顶部
 (function toTop(){
@@ -148,4 +150,14 @@
   })
 })();
 
+// 渲染数据延迟加载
+// $(function (){
+//   $('.bestGoods').on('load','.bestGoods img', function(){   
+//     $(function() {
+//       $("img").lazyload({
+//         effect: "fadeIn"
+//       })
+//     });
+//   })
+// })();
 

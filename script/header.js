@@ -1,5 +1,25 @@
 define(function (){
  
+  //数据下载
+  function download(){
+    $.ajax({
+      type: 'get',
+      url: '../data/index.json',
+      success: function(arr){
+        for ( var i = 0, len = arr.length; i < len; i++ ) {
+          $(`
+          <li> 
+            <img original="${arr[i].imgurl}" src="${arr[i].imgurl}" alt="" id="${arr[i].id}">
+          </li>
+          `).appendTo('.bestGoods')
+        }
+      },
+      error: function(msg){
+        console.log(msg)
+      }
+    })
+  }
+
   // 头部添加
   function header(){
     $(`
@@ -221,7 +241,8 @@ define(function (){
   
 
   return{
-    fn: header,
-    fn1: footer,
+    fn1: download,
+    fn2: header,
+    fn3: footer
   }
 })
