@@ -9,9 +9,11 @@ define(function (){
         for ( var i = 0, len = arr.length; i < len; i++ ) {
           $(`
           <li> 
-            <img original="${arr[i].imgurl}" src="${arr[i].imgurl}" alt="" id="${arr[i].id}">
+            <a href="./goodsDetail.html">
+              <img original="${arr[i].imgurl}" src="${arr[i].imgurl}" alt="" id="${arr[i].id}">
+            </a>
           </li>
-          `).appendTo('.bestGoods')
+          `).prependTo('.lastImg')
         }
       },
       error: function(msg){
@@ -19,7 +21,7 @@ define(function (){
       }
     })
   }
-
+  
   // 头部添加
   function header(){
     $(`

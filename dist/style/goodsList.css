@@ -394,83 +394,85 @@
   cursor: pointer; }
 
 /* 帮助中心 */
-#help .help-main {
-  width: 1200px;
-  height: 282px;
-  margin: 0px auto;
-  border: 1px solid #eee; }
-  #help .help-main .helpTop {
-    width: 1000px;
-    height: 182px;
+#help {
+  margin-top: 100px; }
+  #help .help-main {
+    width: 1200px;
+    height: 282px;
     margin: 0px auto;
-    font-size: 12px; }
-    #help .help-main .helpTop img {
-      margin-left: -50px; }
-    #help .help-main .helpTop .helpTop1 {
-      width: 300px;
-      height: 110px;
-      float: left;
-      margin: 20px 0 0 40px;
-      text-align: center;
-      padding-top: 30px;
-      border-right: 1px solid #e0e0e1; }
-      #help .help-main .helpTop .helpTop1 button {
-        background: #b81c22;
-        color: #ffffff;
-        border: none;
-        margin: 15px 50px 0 0;
-        padding: 5px 12px;
-        cursor: pointer; }
-    #help .help-main .helpTop .helpTop2 {
-      width: 300px;
-      height: 110px;
-      float: left;
-      margin: 20px 0 0 10px;
-      text-align: center;
-      padding-top: 30px;
-      border-right: 1px solid #e0e0e1; }
-      #help .help-main .helpTop .helpTop2 img {
-        cursor: pointer;
-        margin-bottom: 10px; }
-      #help .help-main .helpTop .helpTop2 span {
-        margin-right: 50px;
-        height: 20px;
-        line-height: 20px; }
-    #help .help-main .helpTop .helpTop3 {
-      width: 300px;
-      height: 132px;
-      float: left;
-      margin-left: 10px;
-      text-align: center;
-      padding-top: 30px; }
-      #help .help-main .helpTop .helpTop3 img {
-        width: 86px;
-        height: 86px;
-        margin-left: 105px;
-        cursor: pointer; }
-      #help .help-main .helpTop .helpTop3 span {
-        margin-left: 105px;
-        display: block;
+    border: 1px solid #eee; }
+    #help .help-main .helpTop {
+      width: 1000px;
+      height: 182px;
+      margin: 0px auto;
+      font-size: 12px; }
+      #help .help-main .helpTop img {
+        margin-left: -50px; }
+      #help .help-main .helpTop .helpTop1 {
+        width: 300px;
+        height: 110px;
+        float: left;
+        margin: 20px 0 0 40px;
+        text-align: center;
+        padding-top: 30px;
+        border-right: 1px solid #e0e0e1; }
+        #help .help-main .helpTop .helpTop1 button {
+          background: #b81c22;
+          color: #ffffff;
+          border: none;
+          margin: 15px 50px 0 0;
+          padding: 5px 12px;
+          cursor: pointer; }
+      #help .help-main .helpTop .helpTop2 {
+        width: 300px;
+        height: 110px;
+        float: left;
+        margin: 20px 0 0 10px;
+        text-align: center;
+        padding-top: 30px;
+        border-right: 1px solid #e0e0e1; }
+        #help .help-main .helpTop .helpTop2 img {
+          cursor: pointer;
+          margin-bottom: 10px; }
+        #help .help-main .helpTop .helpTop2 span {
+          margin-right: 50px;
+          height: 20px;
+          line-height: 20px; }
+      #help .help-main .helpTop .helpTop3 {
+        width: 300px;
+        height: 132px;
+        float: left;
+        margin-left: 10px;
+        text-align: center;
+        padding-top: 30px; }
+        #help .help-main .helpTop .helpTop3 img {
+          width: 86px;
+          height: 86px;
+          margin-left: 105px;
+          cursor: pointer; }
+        #help .help-main .helpTop .helpTop3 span {
+          margin-left: 105px;
+          display: block;
+          height: 30px;
+          line-height: 30px; }
+    #help .help-main .helpBottom {
+      width: 1000px;
+      height: 50px;
+      margin: 0px auto;
+      background: #f8f8f8; }
+      #help .help-main .helpBottom li {
+        font-size: 14px;
+        color: #323232;
+        text-align: center;
+        line-height: 30px;
         height: 30px;
-        line-height: 30px; }
-  #help .help-main .helpBottom {
-    width: 1000px;
-    height: 50px;
-    margin: 0px auto;
-    background: #f8f8f8; }
-    #help .help-main .helpBottom li {
-      font-size: 14px;
-      color: #323232;
-      text-align: center;
-      line-height: 30px;
-      height: 30px;
-      float: left;
-      margin-top: 12px;
-      padding: 0px 50px;
-      border-right: 1px solid #dadadb;
-      cursor: pointer; }
-      #help .help-main .helpBottom li:nth-child(6) {
-        border-right: none; }
+        float: left;
+        margin-top: 12px;
+        padding: 0px 50px;
+        border-right: 1px solid #dadadb;
+        cursor: pointer; }
+        #help .help-main .helpBottom li:nth-child(6) {
+          border-right: none; }
 
 /* 版权栏 */
 #copyright .copy-main {
