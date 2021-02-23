@@ -7,14 +7,12 @@ require.config({
     // "download": "download", 
     // "header": "header", 
     // "footer": "footer",
-
   }
-  
 })
 
 require(['header'],function (header){
-header.fn1();
-header.fn2();
-header.fn3();
+  header.fn1();
+  header.fn2();
+  header.fn3();
 
 })

@@ -69,8 +69,7 @@ $(function lazyLoad() {
     $target = $(e.target)
     $target.children().show()  // 或者是 $target.find('ul').show()
   })
-  $('#header').on('mouseleave', '.navList>li', function(e){  
-    $target = $(e.target)
+  $('#header').on('mouseleave', '.navList>li', function(){ 
     $('.navList>li ul').hide()
   })
 

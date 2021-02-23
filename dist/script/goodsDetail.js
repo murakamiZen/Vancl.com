@@ -121,6 +121,43 @@
   })
 })();
 
+// 左侧选项按钮上下切换图片
+(function upperUnder(){
+  $upper = $('.upper')
+  $under = $('.under')
+  $optList = $('.optList')
+
+  $upper.click( ()=>{
+    $optList.animate({
+      top: '0',
+    })
+  }) 
+  $under.click( ()=>{
+    $optList.animate({
+      top: '-407',
+    })
+  }) 
+})();
+
+// 点击左侧选项切换展示图及放大镜图
+(function picSwitch(){
+  $lis = $('.optList li')
+  $lis.each( ()=>{
+    $lis.mouseenter( (e)=>{
+      $showImg = $('.pic .showImg')
+      $bigImg = $('.bigPic img')
+      $('.optList').find('.show').removeClass('show')
+      $(e.target).addClass('show')
+      // console.log( $(e.target).prop('id') ); // 获取点击元素的类名
+      $id = $(e.target).prop('id')
+      $showImg.attr('src', '../image/pic'+ $id +'.jpg')
+      $bigImg.attr('src', '../image/pic'+ $id +'.jpg')
+
+    })
+  })
+})();
+
+
 // 放大镜
 (function Magnify(){
   $pic = $('.pic')
@@ -169,6 +206,31 @@
   })
 })();
 
+// 右侧图片点击效果
+( function clickPic(){
+
+  // 选择颜色
+  $lis = $('.colorList li')
+  $lis.each( ()=>{
+    $lis.click( (e)=>{
+      $('.colorList').find('.show').removeClass('show')
+      $(e.target).addClass('show')
+    })
+  })
+
+
+  // 选择尺码
+  $lis = $('.sizeList li')
+  $lis.each( ()=>{
+    $lis.click( (e)=>{
+      $('.sizeList').find('.show').removeClass('show')
+      $(e.target).addClass('show')
+    })
+  })
+})();
+
+
+
 // 回到顶部
 (function toTop(){
   $toTop = $('.toTop')
@@ -215,5 +277,4 @@
           }
       }, 20);
   }) 
-  
 })();
