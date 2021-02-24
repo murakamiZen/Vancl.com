@@ -207,7 +207,6 @@ define(['jquery'], function($){
   })
 })();
 
-
 // 购物车hover
 (function shoppingCart(){
   $('#header').on('click', '.checkCart', ()=>{
@@ -227,7 +226,7 @@ define(['jquery'], function($){
   })
 })();
 
-// 导航栏hover
+// 导航栏
 (function navigator(){
   $('.home').click( ()=>{
     location.href = './index.html'
@@ -244,16 +243,6 @@ define(['jquery'], function($){
       $('.navList .class2').hide()
     }
   )
-  $('.navList .class2').hover(
-    function(e){
-      $target = $(e.target)
-      $target.show()
-    },
-    // 省略移出子元素效果，防止再移入父元素时子元素隐藏
-    // function(e){
-    //   $('.navList .class2').hide()
-    // }
-  ) 
 })();
 
 // 回到顶部

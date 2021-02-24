@@ -616,7 +616,7 @@
           left: 0;
           top: 0; }
       #container .wrap #detail .content .rightContent {
-        width: 610px;
+        width: 600px;
         height: 415px;
         float: left;
         border: 1px solid #000; }
@@ -922,8 +922,7 @@
               font-weight: bold; }
       #container .wrap #detail #comment .contentArea {
         float: left;
-        width: 978px;
-        height: 1000px;
+        width: 969px;
         border: 1px solid #eee;
         overflow: hidden; }
         #container .wrap #detail #comment .contentArea .new {
@@ -992,22 +991,19 @@
                   padding-top: 20px; }
             #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 {
               width: 157px;
-              height: 165px;
+              height: 115px;
               font-size: 12px;
               float: left;
-              padding-left: 20px;
+              padding: 50px 0 0 20px;
               border-bottom: 1px solid #eee;
               cursor: pointer; }
-              #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 span {
-                display: block;
-                width: 70px;
-                margin: 50px 0 0 34px; }
               #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 p {
                 text-align: center;
-                color: #fff;
-                background: #FFE53A;
-                width: 50px;
                 margin: 10px auto 0; }
+                #container .wrap #detail #comment .contentArea .detail .wrap .userInfo1 p:nth-child(2) {
+                  width: 50px;
+                  color: #fff;
+                  background: #FFE53A; }
       #container .wrap #detail #comment .ask {
         width: 980px;
         float: right;
