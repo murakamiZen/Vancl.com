@@ -8,11 +8,9 @@ $(function lazyLoad() {
 
 // 登录注册跳转
 (function loginRegister(){
-  
   $('#header').on('click', '.login', ()=>{
     location.href = './login.html'
   })
-
   $('#header').on('click', '.register', ()=>{
     location.href = './register.html'
   })
@@ -20,12 +18,10 @@ $(function lazyLoad() {
 
 // 微信hover
 (function wechat(){
-
   $('#header').on('mouseenter', '.wechat', function(){        
     $qrcode = $('.qrcode')
     $qrcode.show(); 
   });
-
   $('#header').on('mouseleave', '.wechat', function(){
     $qrcode = $('.qrcode')
     $qrcode.hide();  
@@ -34,18 +30,15 @@ $(function lazyLoad() {
 
 // 购物车hover
 (function shoppingCart(){
-
   $('#header').on('click', '.checkCart', ()=>{
     location.href = './shoppingCar.html'
   })
-
   $('#header').on('mouseenter', '.shopCart', function(){        
     $('.cartGoods').show(); 
   })
   $('#header').on('mouseleave', '.shopCart', function(){
     $('.cartGoods').hide(); 
   })
-
   $('#header').on('mouseleave', '.cartGoods', function(){
         $('.cartGoods').hide(); 
     })
@@ -57,15 +50,12 @@ $(function lazyLoad() {
 
 // 导航栏hover
 (function navigator(){
-
   $('.home').click( ()=>{
     location.href = './index.html'
   })
-
   $('.class2 li').click( ()=>{
     location.href = './goodsList.html'
   })
-
   $('.navList .class1').hover(
     function(e){
       $target = $(e.target)
@@ -75,12 +65,12 @@ $(function lazyLoad() {
       $('.navList .class2').hide()
     }
   )
-
   $('.navList .class2').hover(
     function(e){
       $target = $(e.target)
       $target.show()
     },
+    // 省略移出子元素效果，防止再移入父元素时子元素隐藏
     // function(e){
     //   $('.navList .class2').hide()
     // }
@@ -103,8 +93,21 @@ $(function lazyLoad() {
 (function toTop(){
   $toTop = $('.toTop')
   $timer = null
+  // 获取滚动条位置
+  var getTop = ()=>{
+    getScrollTop = $(document).scrollTop() == 0
+    ? $(window).scrollTop()
+    : $(document).scrollTop()
+    return getScrollTop
+  }
+  // 设置滚动条位置
+  var setTop = (top)=>{
+    $(document).scrollTop() == 0
+      ? $(window).scrollTop(top) 
+      : $(document).scrollTop( top) 
+  }
+  // 滚动条运动 
   $toTop.click(()=>{
-      // 滚动条运动 
       $timer = setInterval(() => {
           var backTop = getTop()
           var speedTop = backTop / 10
@@ -120,19 +123,6 @@ $(function lazyLoad() {
           }
       }, 20);
   }) 
-  // 获取滚动条位置
-  var getTop = ()=>{
-      getScrollTop = document.documentElement.scrollTop == 0
-      ? document.body.scrollTop
-      : document.documentElement.scrollTop
-      return getScrollTop
-  }
-  // 获取滚动条位置
-  var setTop = (top)=>{
-      document.documentElement.scrollTop == 0
-      ? document.body.scrollTop = top
-      : document.documentElement.scrollTop = top
-  }
 })();
 
 // 底部删除悬浮栏
@@ -154,14 +144,6 @@ $(function lazyLoad() {
   })
 })();
 
-// 渲染数据延迟加载
-// $(function (){
-//   $('.bestGoods').on('load','.bestGoods img', function(){   
-//     $(function() {
-//       $("img").lazyload({
-//         effect: "fadeIn"
-//       })
-//     });
-//   })
-// })();
+
+
 

@@ -495,7 +495,7 @@
       margin-top: 30px;
       position: relative; }
       #container .wrap #detail .content .upper {
-        width: 68px;
+        width: 67px;
         height: 10px;
         line-height: 10px;
         background: url(../image/sprite0725.png) -3270px 0;
@@ -520,9 +520,7 @@
           box-sizing: border-box; }
           #container .wrap #detail .content .options .optList li {
             margin-top: 11px;
-            border: 1px solid #B4B4B4;
-            width: 70px;
-            height: 70px;
+            border: 2px solid #B4B4B4;
             cursor: pointer; }
           #container .wrap #detail .content .options .optList .show {
             border: 2px solid #a10000; }
@@ -531,43 +529,43 @@
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px 0px; }
           #container .wrap #detail .content .options .optList .opt2 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px -70px; }
           #container .wrap #detail .content .options .optList .opt3 {
-            width: 68px;
-            height: 68px;
+            width: 67px;
+            height: 63px;
             background: url(../image/optionList.jpg) no-repeat 0px -140px; }
           #container .wrap #detail .content .options .optList .opt4 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px -210px; }
           #container .wrap #detail .content .options .optList .opt5 {
-            width: 68px;
-            height: 68px;
+            width: 67px;
+            height: 63px;
             background: url(../image/optionList.jpg) no-repeat 0px -273px; }
           #container .wrap #detail .content .options .optList .opt6 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px -140px; }
           #container .wrap #detail .content .options .optList .opt7 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px -273px; }
           #container .wrap #detail .content .options .optList .opt8 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px -70px; }
           #container .wrap #detail .content .options .optList .opt9 {
-            width: 68px;
+            width: 67px;
             height: 68px;
             background: url(../image/optionList.jpg) no-repeat 0px 0px; }
           #container .wrap #detail .content .options .optList .opt10 {
-            width: 68px;
-            height: 68px;
+            width: 67px;
+            height: 61px;
             background: url(../image/optionList.jpg) no-repeat 0px -210px; }
         #container .wrap #detail .content .options .under {
-          width: 70px;
+          width: 67px;
           height: 10px;
           line-height: 10px;
           background: url(../image/sprite0725.png) 0 -136px;
@@ -675,76 +673,55 @@
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul li {
                 margin: 0 5px 5px 0;
                 cursor: pointer;
-                border: 1px solid #999;
-                height: 36px;
+                border: 2px solid #999;
+                height: 39px;
                 float: left;
                 box-sizing: border-box; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .show {
                 border: 2px solid #a10000; }
+              #container .wrap #detail .content .rightContent .selectArea .color .colorList ul span {
+                height: 36px;
+                line-height: 36px;
+                font-size: 12px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color1 {
                 width: 95px;
                 background: url(../image/colorList.jpg) no-repeat 0px 0px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color1 p {
-                  height: 31px;
-                  line-height: 38px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color1 span {
                   padding-left: 54px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color2 {
                 width: 115px;
                 background: url(../image/colorList.jpg) no-repeat 0px -36px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color2 p {
-                  height: 31px;
-                  line-height: 38px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color2 span {
                   padding-left: 47px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color3 {
                 width: 125px;
                 background: url(../image/colorList.jpg) no-repeat 0px -71px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color3 p {
-                  height: 31px;
-                  line-height: 38px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color3 span {
                   padding-left: 50px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color4 {
                 width: 97px;
                 background: url(../image/colorList.jpg) no-repeat 0px -108px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color4 p {
-                  height: 31px;
-                  line-height: 32px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color4 span {
                   padding-left: 52px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color5 {
                 width: 110px;
                 background: url(../image/colorList.jpg) no-repeat 0px -145px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color5 p {
-                  height: 30px;
-                  line-height: 38px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color5 span {
                   padding-left: 50px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color6 {
                 width: 97px;
                 background: url(../image/colorList.jpg) no-repeat 0px -180px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color6 p {
-                  height: 30px;
-                  line-height: 38px;
-                  font-size: 12px;
-                  padding-left: 54px; }
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color6 span {
+                  padding-left: 50px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color7 {
                 width: 115px;
-                background: url(../image/colorList.jpg) no-repeat 0px -216px;
-                overflow: hidden; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color7 p {
-                  height: 30px;
-                  line-height: 38px;
-                  font-size: 12px;
+                background: url(../image/colorList.jpg) no-repeat 0px -216px; }
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color7 span {
                   padding-left: 54px; }
               #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color8 {
                 width: 103px;
                 background: url(../image/colorList.jpg) no-repeat 0px -252px; }
-                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color8 p {
-                  height: 30px;
-                  line-height: 38px;
-                  font-size: 12px;
+                #container .wrap #detail .content .rightContent .selectArea .color .colorList ul .color8 span {
                   padding-left: 52px; }
           #container .wrap #detail .content .rightContent .selectArea .size {
             width: 100%;
@@ -768,7 +745,7 @@
                   height: 22px;
                   line-height: 22px;
                   margin-left: 10px;
-                  border: 1px solid #eee;
+                  border: 2px solid #eee;
                   float: left;
                   cursor: pointer; }
           #container .wrap #detail .content .rightContent .selectArea .num {

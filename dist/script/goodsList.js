@@ -1,6 +1,5 @@
 
 define(['jquery'], function($){
-
   //数据下载
   function download(){
     $.ajax({
@@ -178,23 +177,19 @@ define(['jquery'], function($){
       </div>
     `).appendTo('#footer')
   }
-
+  
   return{
     download: download,
     footer: footer,
     header: header
   }
-  
 });
-
-
 
 // 登录注册跳转
 (function loginRegister(){
   $('#header').on('click', '.login', ()=>{
     location.href = './login.html'
   })
-
   $('#header').on('click', '.register', ()=>{
     location.href = './register.html'
   })
@@ -206,7 +201,6 @@ define(['jquery'], function($){
     $qrcode = $('.qrcode')
     $qrcode.show(); 
   });
-
   $('#header').on('mouseleave', '.wechat', function(){
     $qrcode = $('.qrcode')
     $qrcode.hide();  
@@ -219,35 +213,28 @@ define(['jquery'], function($){
   $('#header').on('click', '.checkCart', ()=>{
     location.href = './shoppingCar.html'
   })
-
   $('#header').on('mouseenter', '.shopCart', function(){        
     $('.cartGoods').show(); 
   })
   $('#header').on('mouseleave', '.shopCart', function(){
     $('.cartGoods').hide(); 
   })
-
   $('#header').on('mouseleave', '.cartGoods', function(){
     $('.cartGoods').hide(); 
   })
   $('#header').on('mouseenter', '.cartGoods', function(){        
     $('.cartGoods').show(); 
   })
-  
 })();
-
 
 // 导航栏hover
 (function navigator(){
-
   $('.home').click( ()=>{
     location.href = './index.html'
   })
-
   $('.class2 li').click( ()=>{
     location.href = './goodsList.html'
   })
-
   $('.navList .class1').hover(
     function(e){
       $target = $(e.target)
@@ -257,26 +244,23 @@ define(['jquery'], function($){
       $('.navList .class2').hide()
     }
   )
-
   $('.navList .class2').hover(
     function(e){
       $target = $(e.target)
       $target.show()
     },
+    // 省略移出子元素效果，防止再移入父元素时子元素隐藏
     // function(e){
     //   $('.navList .class2').hide()
     // }
-  )
-  
+  ) 
 })();
-
-
 
 // 回到顶部
 (function toTop(){
   $toTop = $('.toTop')
   $timer = null
-  // 判断logo显示
+  // logo显示
   $(window).scroll( function(e){
     if($(window).scrollTop() >= 200){
       $toTop.css('display','block')
@@ -290,16 +274,16 @@ define(['jquery'], function($){
 
   // 获取滚动条位置
   var getTop = ()=>{
-    getScrollTop = document.documentElement.scrollTop == 0
-    ? document.body.scrollTop
-    : document.documentElement.scrollTop
+    getScrollTop = $(document).scrollTop() == 0
+    ? $(window).scrollTop()
+    : $(document).scrollTop()
     return getScrollTop
   }
   // 设置滚动条位置
   var setTop = (top)=>{
-      document.documentElement.scrollTop == 0
-      ? document.body.scrollTop = top
-      : document.documentElement.scrollTop = top
+    $(document).scrollTop() == 0
+      ? $(window).scrollTop(top) 
+      : $(document).scrollTop( top) 
   }
   // 滚动条运动 
   $toTop.click(()=>{ 
@@ -318,7 +302,6 @@ define(['jquery'], function($){
           }
       }, 20);
   }) 
-  
 })();
 
 

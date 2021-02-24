@@ -592,7 +592,7 @@
         margin-top: 30px;
         position: relative;
         .upper{
-          width: 68px;
+          width: 67px;
           height: 10px;
           line-height: 10px;
           background: url(../image/sprite0725.png) -3270px 0;
@@ -619,9 +619,7 @@
             box-sizing: border-box;
             li{
               margin-top: 11px;
-              border: 1px solid #B4B4B4;
-              width: 70px;
-              height: 70px;
+              border: 2px solid #B4B4B4;
               cursor: pointer;
             }
             .show{
@@ -633,53 +631,53 @@
               background: url(../image/optionList.jpg) no-repeat 0px 0px;
             }
             .opt2{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px -70px;
             }
             .opt3{
-              width: 68px;
-              height: 68px;
+              width: 67px;
+              height: 63px;
               background: url(../image/optionList.jpg) no-repeat 0px -140px;
             }
             .opt4{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px -210px;
             }
             .opt5{
-              width: 68px;
-              height: 68px;
+              width: 67px;
+              height: 63px;
               background: url(../image/optionList.jpg) no-repeat 0px -273px;
             }
             .opt6{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px -140px;
             }
             .opt7{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px -273px;
             }
             .opt8{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px -70px;
             }
             .opt9{
-              width: 68px;
+              width: 67px;
               height: 68px;
               background: url(../image/optionList.jpg) no-repeat 0px 0px;
             }
             .opt10{
-              width: 68px;
-              height: 68px;
+              width: 67px;
+              height: 61px;
               background: url(../image/optionList.jpg) no-repeat 0px -210px;
             }
           }
           .under{
-            width: 70px;
+            width: 67px;
             height: 10px;
             line-height: 10px;
             background: url(../image/sprite0725.png) 0 -136px;
@@ -809,94 +807,74 @@
                 height: 100px;
                 ul{
                   li{
-                    margin:0 5px 5px 0;
+                    margin: 0 5px 5px 0;
                     cursor: pointer;
-                    border: 1px solid #999;
-                    height: 36px;
+                    border: 2px solid #999;
+                    height: 39px;
                     float: left; 
                     box-sizing: border-box;
                   }
                   .show{
                     border: 2px solid #a10000;
-                  }                  
+                  } 
+                  span{
+                    height: 36px;
+                    line-height: 36px;
+                    font-size: 12px;
+                  }                 
                   .color1{
                     width: 95px;                    
                     background: url(../image/colorList.jpg) no-repeat 0px 0px;                                       
-                    p{
-                      height: 31px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{                     
                       padding-left: 54px;
                     }  
                   }
                   .color2{
                     width: 115px;
                     background: url(../image/colorList.jpg) no-repeat 0px -36px;                    
-                    p{
-                      height: 31px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{
                       padding-left: 47px;
                     }  
                   }
                   .color3{
                     width: 125px;
                     background: url(../image/colorList.jpg) no-repeat 0px -71px;                    
-                    p{
-                      height: 31px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{
                       padding-left: 50px;
                     }  
                   }
                   .color4{
                     width: 97px;
                     background: url(../image/colorList.jpg) no-repeat 0px -108px;                    
-                    p{
-                      height: 31px;
-                      line-height: 32px;
-                      font-size: 12px;
+                    span{
                       padding-left: 52px;
                     }  
                   }
                   .color5{
                     width: 110px;
                     background: url(../image/colorList.jpg) no-repeat 0px -145px;                    
-                    p{
-                      height: 30px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{
                       padding-left: 50px;
                     }  
                   }
                   .color6{
                     width: 97px;
                     background: url(../image/colorList.jpg) no-repeat 0px -180px;                    
-                    p{
-                      height: 30px;
-                      line-height: 38px;
-                      font-size: 12px;
-                      padding-left: 54px;
+                    span{
+                      padding-left: 50px;
                     }  
                   }
                   .color7{
                     width: 115px;
                     background: url(../image/colorList.jpg) no-repeat 0px -216px; 
-                    overflow: hidden;                   
-                    p{
-                      height: 30px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{
                       padding-left: 54px;
                     }  
                   }
                   .color8{
                     width: 103px;
                     background: url(../image/colorList.jpg) no-repeat 0px -252px;                    
-                    p{
-                      height: 30px;
-                      line-height: 38px;
-                      font-size: 12px;
+                    span{
                       padding-left: 52px;
                     }  
                   }
@@ -928,7 +906,7 @@
                     height: 22px;
                     line-height: 22px;
                     margin-left: 10px;
-                    border: 1px solid #eee;
+                    border: 2px solid #eee;
                     float: left;
                     cursor: pointer;
                   }

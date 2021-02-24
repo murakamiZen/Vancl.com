@@ -1,17 +1,25 @@
 
+// 图片延迟加载
+$(function lazyLoad() {
+  $("img").lazyload({
+    effect: "fadeIn"
+  })
+});
+
 // 顶部悬浮栏
 (function topFloat(){
   $topFloat = $('.topFloat') 
-  $(window).scroll( function(e){
-    if($(window).scrollTop() >= 850){
-      $topFloat.css('display','block')
-    }   
-  });
   $(window).scroll( function(){
-    if($(window).scrollTop() < 850){
-      $topFloat.css('display','none')
-    } 
-  });
+    if($(window).scrollTop() >= 850){
+      // $topFloat.css('display','block')
+      // $topFloat.show()
+      $topFloat.fadeIn('slow')
+    } else {
+      // $topFloat.css('display','none')
+      // $topFloat.hide()
+      $topFloat.fadeOut('slow')
+    }  
+  })
 })();
 
 // 右侧悬浮栏
@@ -33,7 +41,8 @@
     // 给外面返回最新坐标
     return $flag
   });
-  // enter+click 来实现：
+
+  // enter+click 切换效果：
   // $tab.mouseenter( ()=>{
   //     $rightFloat.animate( {right: '0px'}, 'slow' )    
   // });
@@ -45,11 +54,9 @@
 
 // 登录注册跳转
 (function loginRegister(){
-  
   $('#header').on('click', '.login', ()=>{
     location.href = './login.html'
   })
-
   $('#header').on('click', '.register', ()=>{
     location.href = './register.html'
   })
@@ -57,12 +64,10 @@
 
 // 微信hover
 (function wechat(){
-
   $('#header').on('mouseenter', '.wechat', function(){        
     $qrcode = $('.qrcode')
     $qrcode.show(); 
   });
-
   $('#header').on('mouseleave', '.wechat', function(){
     $qrcode = $('.qrcode')
     $qrcode.hide();  
@@ -71,53 +76,20 @@
 
 // 购物车hover
 (function shoppingCart(){
-
   $('#header').on('click', '.checkCart', ()=>{
     location.href = './shoppingCar.html'
   })
-
   $('#header').on('mouseenter', '.shopCart', function(){        
     $('.cartGoods').show(); 
   })
   $('#header').on('mouseleave', '.shopCart', function(){
     $('.cartGoods').hide(); 
   })
-
   $('#header').on('mouseleave', '.cartGoods', function(){
         $('.cartGoods').hide(); 
     })
   $('#header').on('mouseenter', '.cartGoods', function(){        
     $('.cartGoods').show(); 
-  })
-  
-})();
-
-// 导航栏hover
-(function navigator(){
-  $('#header').on('click', '.home', ()=>{
-    location.href = './index.html'
-  })
-
-  $('#header').on('click', '.class2 li', ()=>{
-      location.href = './goodsList.html'
-  })
-
-  $('#header').on('mouseenter', '.navList>li', function(e){  
-    $target = $(e.target)
-    $target.children().show()  // 或者是 $target.find('ul').show()
-  })
-  $('#header').on('mouseleave', '.navList>li', function(e){  
-    $target = $(e.target)
-    $('.navList>li ul').hide()
-  })
-
-  $('#header').on('mouseenter', '.navList ul li', function(e){  
-    $target = $(e.target)
-    $target.show()
-  })
-  $('#header').on('mouseleave', '.navList ul li', function(e){  
-    $target = $(e.target)
-    $('.navList>li ul').hide()
   })
 })();
 
@@ -126,7 +98,6 @@
   $upper = $('.upper')
   $under = $('.under')
   $optList = $('.optList')
-
   $upper.click( ()=>{
     $optList.animate({
       top: '0',
@@ -152,11 +123,9 @@
       $id = $(e.target).prop('id')
       $showImg.attr('src', '../image/pic'+ $id +'.jpg')
       $bigImg.attr('src', '../image/pic'+ $id +'.jpg')
-
     })
   })
 })();
-
 
 // 放大镜
 (function Magnify(){
@@ -164,19 +133,15 @@
   $mask = $('.mask')
   $bigPic= $('.bigPic')
   $img= $('.bigPic img')
-
   $pic.mouseenter(()=>{
     $mask.css( 'display','block');
     $bigPic.css('display','block');
   })
-
   $pic.mouseleave(()=>{
     $mask.css('display','none');
     $bigPic.css('display','none');
   })
-
   $pic.mousemove( (e)=>{
-  
     var mask_left = e.pageX - $pic.offset().left - $mask.width() /2
     var mask_top = e.pageY - $pic.offset().top - $mask.height() /2
 
@@ -194,7 +159,7 @@
     }
 
     $mask.css({'left': mask_left + 'px', 'top': mask_top + 'px' })
-    
+ 
     var scaleX = mask_left/($pic.width() - $mask.width() )
     var scaleY = mask_top/($pic.height() - $mask.height() )
 
@@ -202,23 +167,23 @@
     var img_top = ($img.height() - $bigPic.height())*scaleY
 
     $img.css({'left': -img_left + 'px', 'top': -img_top + 'px' })
-    
   })
 })();
 
 // 右侧图片点击效果
 ( function clickPic(){
-
   // 选择颜色
   $lis = $('.colorList li')
   $lis.each( ()=>{
     $lis.click( (e)=>{
       $('.colorList').find('.show').removeClass('show')
-      $(e.target).addClass('show')
+      if($(e.target).is('span')){
+        $(e.target).closest('li').addClass('show')
+      } else {
+        $(e.target).addClass('show')
+      }
     })
   })
-
-
   // 选择尺码
   $lis = $('.sizeList li')
   $lis.each( ()=>{
@@ -229,13 +194,11 @@
   })
 })();
 
-
-
 // 回到顶部
 (function toTop(){
   $toTop = $('.toTop')
   $timer = null
-  // 判断logo是否显示
+  // logo显示
   $(window).scroll( function(e){
     if($(window).scrollTop() >= 200){
       $toTop.css('display','block')
@@ -246,7 +209,6 @@
       $toTop.css('display','none')
     } 
   });
-
   // 获取滚动条位置
   var getTop = ()=>{
     getScrollTop = document.documentElement.scrollTop == 0
