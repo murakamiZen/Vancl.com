@@ -36,7 +36,3 @@ ol, ul, li {
 /* 清除图片在低版本浏览器中的边框 */
 img {
   border: none; }
-
-/* 清除input点击默认样式 */
-input {
-  outline: none; }

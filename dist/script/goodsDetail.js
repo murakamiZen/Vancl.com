@@ -93,6 +93,25 @@ $(function lazyLoad() {
   })
 })();
 
+// 导航栏hover
+(function navigator(){
+  $('.home').click( ()=>{
+    location.href = './index.html'
+  })
+  $('.class2 li').click( ()=>{
+    location.href = './goodsList.html'
+  })
+  $('.navList .class1').hover(
+    function(e){
+      $target = $(e.target)
+      $target.children().show() 
+    },
+    function(){
+      $('.navList .class2').hide()
+    }
+  )
+})();
+
 // 左侧选项按钮上下切换图片
 (function upperUnder(){
   $upper = $('.upper')
@@ -237,6 +256,6 @@ $(function lazyLoad() {
           if(backTop == 0){
             clearInterval($timer)
           }
-      }, 20);
+      }, 25);
   }) 
 })();

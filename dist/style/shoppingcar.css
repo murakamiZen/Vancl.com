@@ -112,7 +112,7 @@
   border-collapse: separate; }
 
 .cartProduct table td.photo {
-  width: 90px; }
+  width: 50px; }
 
 .cartProduct table td.photo img {
   width: 50px;
@@ -132,12 +132,11 @@
   border-bottom: 1px solid #B7B7B7;
   line-height: 38px; }
 
-.cartProduct th, .cartProduct td {
-  text-align: center;
-  vertical-align: middle; }
-
 .cartProduct thead .image {
-  width: 60px; }
+  width: 40px; }
+
+.cartProduct thead .goodsName {
+  padding-left: 20px; }
 
 .cartProduct thead .th2 {
   width: 70px; }
@@ -168,10 +167,18 @@
   padding-left: 20px; }
 
 .cartProduct tbody .goodsInfo {
-  width: 337px; }
+  width: 283px;
+  text-align: center; }
+
+.cartProduct tbody .size {
+  width: 43px;
+  text-align: center; }
+
+.cartProduct tbody .price {
+  text-align: center; }
 
 .cartProduct tbody .num {
-  width: 100px; }
+  width: 113px; }
 
 .cartProduct tbody .num div {
   margin-left: 27px; }
@@ -185,15 +192,66 @@
   text-align: center; }
 
 .cartProduct tbody .num .decrease {
+  width: 17px;
+  height: 20px;
   float: left;
-  cursor: pointer; }
+  cursor: auto;
+  background: url(../image/cartsprite.png) no-repeat -85px 0px; }
 
 .cartProduct tbody .num .increase {
+  width: 17px;
+  height: 20px;
   float: left;
-  cursor: pointer; }
+  cursor: pointer;
+  background: url(../image/cartsprite.png) no-repeat; }
+
+.cartProduct tbody .cheap {
+  text-align: center; }
+
+.cartProduct tbody .subtotal {
+  width: 113px;
+  text-align: center; }
+
+.cartProduct tbody .subtotal div {
+  overflow: hidden; }
 
 .cartProduct tbody .operate {
+  cursor: pointer;
+  text-align: center;
+  position: relative; }
+
+.cartProduct tbody .operate .delAlert {
+  font-size: 12px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 99;
+  display: none;
+  width: 150px;
+  margin-left: -72px;
+  margin-top: -100px;
+  border: 1px solid #A10000;
+  text-align: left; }
+
+.cartProduct tbody .operate .delAlert .msg {
+  padding: 10px 0 0 15px; }
+
+.cartProduct tbody .operate .delAlert .button {
+  margin: 10px 0;
+  text-align: center; }
+
+.cartProduct tbody .operate .delAlert .button a {
+  margin-right: 10px;
   cursor: pointer; }
+
+.cartProduct tbody .operate .delAlert .triangle {
+  position: absolute;
+  overflow: hidden;
+  background-position: 0 0;
+  height: 8px;
+  width: 9px;
+  left: 65%;
+  bottom: -8px;
+  background: url(../image/icon-shopping.gif); }
 
 .summary {
   padding: 12px 10px 10px 0;
@@ -201,10 +259,10 @@
   border: 1px solid #EBE5BB;
   line-height: 25px;
   width: 968px;
+  height: 110px;
   position: relative;
   color: #333;
-  margin-top: 14px;
-  overflow: hidden; }
+  margin-top: 14px; }
 
 .summary em, .summary .total a {
   color: #a10000;
@@ -212,27 +270,74 @@
 
 .summary .bar {
   padding: 14px 42px 0 13px;
-  text-align: left; }
+  text-align: left;
+  position: relative; }
 
 .summary .bar .del {
   margin-left: 25px;
-  color: #333; }
+  color: #333;
+  cursor: pointer; }
+
+.summary .delAlert {
+  font-size: 12px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 99;
+  display: none;
+  width: 150px;
+  margin-left: 0px;
+  margin-top: -75px;
+  border: 1px solid #A10000;
+  text-align: left; }
+
+.summary .delAlert .msg {
+  padding: 10px 0 0 15px; }
+
+.summary .delAlert .button {
+  margin: 10px 0;
+  text-align: center; }
+
+.summary .delAlert .button a {
+  margin-right: 10px;
+  cursor: pointer; }
+
+.summary .delAlert .triangle {
+  position: absolute;
+  overflow: hidden;
+  background-position: 0 0;
+  height: 8px;
+  width: 9px;
+  left: 65%;
+  bottom: -8px;
+  background: url(../image/icon-shopping.gif); }
 
 .summary .bar .carriage {
-  margin-left: 42px; }
+  position: absolute;
+  top: 35%;
+  left: 320px;
+  display: none; }
 
 .summary .bar span {
   margin-left: 42px; }
 
+.summary .bar span p {
+  position: absolute;
+  top: 35%;
+  left: 270px; }
+
 .summary .total {
   float: left;
   padding: 20px 10px 10px 13px;
-  font-size: 12px; }
+  font-size: 12px;
+  position: relative; }
 
-.summary .total a {
-  margin-left: 10px;
+.summary .total .coupon {
   text-decoration: underline;
-  font-weight: normal; }
+  width: 95px;
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  left: 270px; }
 
 .summary .total span em {
   font-size: 24px; }

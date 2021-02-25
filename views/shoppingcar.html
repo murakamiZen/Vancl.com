@@ -45,11 +45,11 @@
       <div class="cartProduct">
         <table cellspacing="0">
           <thead>
-            <tr>
+            <tr class="title">
               <th></th>
               <th class="th2"><input type="checkbox" class="theadAll"><span>全选</span></th>
               <th class="image"></th>
-              <th>商品名称</th>
+              <th class="goodsName">商品名称</th>
               <th>尺寸</th>
               <th>单价</th>
               <th>数量</th>
@@ -59,7 +59,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="tbody">
             <tr class="white-space"></tr>
             <!-- <tr class="selected">
               <td class="white-space-w"></td>
@@ -68,57 +68,49 @@
               <td class="goodsInfo">针织衫圆领 棉线可机洗 男款 姜黄	</td>
               <td class="size">L</td>
               <td class="price">￥178</td>
-              <td class="num"><div><a class="decrease">-</a><input type="text" value="1"><a class="increase">+</a></div></td>
+              <td class="num">
+                <div>
+                  <a class="decrease">-</a>
+                  <input type="text" value="1">
+                  <a class="increase">+</a>
+                </div>
+              </td>
               <td class="cheap">-</td>
               <td class="subtotal">￥178</td>
               <td class="operate">删除</td>
               <td class="white-space-w"></td>
-            </tr>
-            <tr>
-              <td class="white-space-w"></td>
-              <td class="choose"><input type="checkbox"></td>
-              <td class="photo"><img src="../image/cart1.jpg" alt=""></td>
-              <td class="goodsInfo">针织衫圆领 棉线可机洗 男款 姜黄	</td>
-              <td class="size">L</td>
-              <td class="price">￥178</td>
-              <td class="num"><div><a class="decrease">-</a><input type="text" value="1"><a class="increase">+</a></div></td>
-              <td class="cheap">-</td>
-              <td class="subtotal">￥178</td>
-              <td class="operate">删除</td>
-              <td class="white-space-w"></td>
-            </tr>
-            <tr class="selected">
-              <td class="white-space-w"></td>
-              <td class="choose"><input type="checkbox"></td>
-              <td class="photo"><img src="../image/cart1.jpg" alt=""></td>
-              <td class="goodsInfo">针织衫圆领 棉线可机洗 男款 姜黄	</td>
-              <td class="size">L</td>
-              <td class="price">￥178</td>
-              <td class="num"><div><a class="decrease">-</a><input type="text" value="1"><a class="increase">+</a></div></td>
-              <td class="cheap">-</td>
-              <td class="subtotal">￥178</td>
-              <td class="operate">删除</td>
-              <td class="white-space-w"></td>
-            </tr> -->
+            </tr>-->
             <tr class="white-space emptyGoods"></tr>
           </tbody>
         </table>
         <div class="summary clearfix">
+          <div class="delAlert">
+            <p class="msg">确定要删除此商品吗</p>
+            <p class="button">
+              <a class="yes">确定</a>
+              <a class="cancle">取消</a>
+            </p>
+            <span class="triangle"></span>
+          </div> 
           <div class="bar">
             <input type="checkbox" id="all-choice">
             <label for="all-choice">全选</label>
-            <a href="#" class="del">删除</a>
-            <span>数量总计：<em>0</em>件</span>
+            <a class="del">删除
+                  
+            </a>
+            <span>数量总计 : 
+              <em>0</em> <p>件</p> 
+            </span>
             <em class="carriage">您目前可享受全场购物免运费</em>
           </div>
           <div class="total">
-            产品金额总计(不含运费)：
+            产品金额总计(不含运费) ：
             <span><em>￥0</em></span>
-            <a href="#">点击领取优惠券</a>
+            <div class="coupon">点击领取优惠券</div>
           </div>
           <div class="calculate">
             <a href="./goodsList.html" class="continueBuy">&lt;&lt;继续购物</a>
-            <a href="#" class="goPay">去结算&gt;&gt;</a>
+            <a href="javascript:void(0)" class="goPay">去结算&gt;&gt;</a>
           </div>  
         </div>
       </div>
@@ -134,8 +126,6 @@
       </div>
     </div>
   </div>
-  
-
 
   <script src="./script/jquery-1.8.3.js"></script>
   <script src="./script/shoppingCar.js"></script>

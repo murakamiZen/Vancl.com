@@ -21,38 +21,43 @@
     <div class="wrapHeader">
       <h1>
         <span>注册新用户</span>
-        <span>我已经注册，现在就<a class="registerNow" href="./login.html">登录</a></span>
+        <span>我已经注册，现在就<a class="register" href="./login.html">登录</a></span>
       </h1>
     </div>
     <!-- 注册块广告 -->
     <div class="advertise"><img src="../image/loginBig.jpg" alt=""></div>
     <!-- 注册块输入栏 -->
-    <div class="register">
+    <div class="login">
       <div class="userInfo">
         <div>
           <input class="code" type="text" name="username" placeholder="验证码">
           <img class="validate" src="../image/validateCode.jpg" alt="">
+          <p class="tipsVerifyCode">请输入图片验证码</p>
         </div>
         <div>
           <input class="phone" type="text" name="password" placeholder="请输入手机号">
           <a href="#" class="getCode">获取短信验证码</a>
+          <span>请填写真实的手机号，并进行验证</span>
         </div>
         <div>
           <input class="phoneCode" type="text" name="password" placeholder="填写手机验证码">
+          <span>请输入手机接收到的验证码</span>
         </div>
         <div>
           <input class="designPass" type="password" name="password" placeholder="设定登录密码">
+          <span>6-16位字符，可使用字母、数字或符号的组合</span>
         </div>
         <div>
           <input class="confirmPass" type="password" name="password" placeholder="再次输入密码">
+          <span>请再次输入登录密码，两次输入必须一致</span>
         </div>
         <div class="btn">
           <p>
-            <input type="checkbox" class="checkbox">
+            <input type="checkbox">
             <span>请阅读</span>
             <a href="#" class="service">《VANCL凡客诚品服务条款》</a>
           </p>
-          <a href="#" class="vanclRegister">立即注册</a>
+          <a href="#" class="registerNow">立即注册</a>
         </div>
       </div>
     </div>
@@ -68,9 +73,8 @@
     </div>
   </div>
 
-<script src="./script/jquery-1.8.3.js"></script>
-<script src="./script/utils.js"></script>
-<script src="./script/register.js"></script>
+  <script src="./script/jquery-1.8.3.js"></script>
+  <script src="./script/register.js"></script>
 
 </body>
 </html>
