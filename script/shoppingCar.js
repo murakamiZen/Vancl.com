@@ -54,6 +54,7 @@ $(function (){
       }
     })
     
+
     // 全选1(四种方式拿到checked属性)-----(三种方式设置checked属性)
     $('.cartProduct').on('click','thead .theadAll',function (){
       if ($('.cartProduct thead .theadAll').prop('checked')) {
