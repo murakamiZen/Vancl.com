@@ -32,17 +32,17 @@ text-align: center;width: 176px;}
 .cartProduct table td img{border: 1px solid #C8C8C8;}
 .cartProduct thead{background-color: #eee;}
 .cartProduct thead tr{width: 980px;}
+.cartProduct thead th:nth-last-child(1){width: 16px;}
 .cartProduct th{border-top: 1px solid #DCDFE4;border-bottom: 1px solid #B7B7B7;line-height: 38px;}
-// .cartProduct th,.cartProduct td{vertical-align: middle;}
 .cartProduct thead .image{width: 40px;}
 .cartProduct thead .goodsName{padding-left: 20px;}
 .cartProduct thead .th2{width: 70px;}
 .cartProduct thead .theadAll{margin: 0 10px 0 0;width: 13px;height: 13px;}
 .cartProduct thead span{margin-right: 1px;}
-.cartProduct tbody .white-space{background-color: white;height: 21px;}
-.cartProduct tbody tr{background-color: #fff;}
+.cartProduct tbody .white-space{background-color: white;height: 25px;line-height: 25px; }
+.cartProduct tbody td{background-color: #fff;padding-bottom: 20px;text-align: center;}
 // 购物车复选框选中样式
-.cartProduct tbody tr.selected{background: #F8F8F8;}
+.cartProduct tbody tr.selected{background: #F8F8F8;position: relative;}
 .cartProduct tbody .selected .white-space-w{width: 16px;background-color: #fff;}
 .cartProduct tbody .choose{padding-left: 20px;}
 
@@ -52,23 +52,25 @@ text-align: center;width: 176px;}
 .cartProduct tbody .num{width: 113px;}
 .cartProduct tbody .num div{margin-left: 27px;}
 .cartProduct tbody .num input{margin: 0 4px;width: 30px;height: 18px;border: 1px solid #D8D8D8;float: left;text-align: center;}
-.cartProduct tbody .num .decrease{width: 17px;height: 20px; float: left;cursor: auto;background: url(../image/cartsprite.png) no-repeat -85px 0px;} //-51px
+.cartProduct tbody .num .decrease{width: 17px;height: 20px; float: left;cursor: auto;background: url(../image/cartsprite.png) no-repeat -85px 0px;} 
+.cartProduct tbody .num .decrease:hover{background: url(../image/cartsprite.png) no-repeat -69px 0px;}
 .cartProduct tbody .num .increase{width: 17px;height: 20px; float: left;cursor: pointer;background: url(../image/cartsprite.png) no-repeat;}
+.cartProduct tbody .num .increase:hover{background: url(../image/cartsprite.png) no-repeat -17px 0px;}
 .cartProduct tbody .cheap{text-align: center;}
 .cartProduct tbody .subtotal{width: 113px;text-align: center;}
 .cartProduct tbody .subtotal div{overflow: hidden;}
-.cartProduct tbody .operate{cursor: pointer;text-align: center;position: relative;}
-.cartProduct tbody .operate .delAlert{font-size: 12px;background-color: #fff;position: absolute;z-index: 99;display: none;width: 150px;margin-left: -72px;margin-top: -100px;border: 1px solid #A10000;text-align: left;}
-.cartProduct tbody .operate .delAlert .msg{padding: 10px 0 0 15px;}
-.cartProduct tbody .operate .delAlert .button{margin: 10px 0;text-align: center;}
-.cartProduct tbody .operate .delAlert .button a{margin-right: 10px;cursor: pointer;}
-.cartProduct tbody .operate .delAlert .triangle{position: absolute;overflow: hidden;background-position: 0 0;height: 8px;width: 9px;left: 65%;bottom: -8px;background: url(../image/icon-shopping.gif);}
+.cartProduct tbody .operate{cursor: pointer;text-align: center;}
+.cartProduct tbody .selected .delAlert{font-size: 12px;background-color: #fff;position: absolute;display: none;width: 135px;height: 60px; margin-left: -137px;margin-top: -84px;border: 1px solid #A10000;text-align: left;position: relative;}
+.cartProduct tbody .selected .delAlert .msg{padding: 10px 0 0 15px;}
+.cartProduct tbody .selected .delAlert .button{margin: 10px 0;text-align: center;}
+.cartProduct tbody .selected .delAlert .button a{margin-right: 10px;cursor: pointer;}
+.cartProduct tbody .selected .delAlert .triangle{position: absolute;background-position: 0 0;height: 8px;width: 17px;left: 65%;bottom: -8px;background: url(../image/icon-shopping.gif);overflow: hidden;}
 
 .summary{padding: 12px 10px 10px 0;background: #FFFEF5;border: 1px solid #EBE5BB;line-height: 25px;width: 968px;height: 110px;position: relative;color: #333;margin-top: 14px;}
 .summary em,.summary .total a{color: #a10000;font-weight: bold;}
 .summary .bar{padding: 14px 42px 0 13px;text-align: left;position: relative;}
 .summary .bar .del{margin-left: 25px;color: #333;cursor: pointer;}
-.summary .delAlert{font-size: 12px;background-color: #fff;position: absolute;z-index: 99;display: none;width: 150px;margin-left: 0px;margin-top: -75px;border: 1px solid #A10000;text-align: left;}
+.summary .delAlert{font-size: 12px;background-color: #fff;position: absolute;z-index: 99;display: none;width: 160px;margin-left: 0px;margin-top: -75px;border: 1px solid #A10000;text-align: left;}
 .summary .delAlert .msg{padding: 10px 0 0 15px;}
 .summary .delAlert .button{margin: 10px 0;text-align: center;}
 .summary .delAlert .button a{margin-right: 10px;cursor: pointer;}
@@ -77,7 +79,7 @@ text-align: center;width: 176px;}
 .summary .bar span{margin-left: 42px;}
 .summary .bar span p{position: absolute;top: 35%;left: 270px;}
 .summary .total{float: left;padding: 20px 10px 10px 13px;font-size: 12px;position: relative;}
-.summary .total .coupon{text-decoration: underline;width: 95px; cursor: pointer;position: absolute;top: 35%;left: 270px;}  
+.summary .total .coupon{text-decoration: underline;width: 95px; cursor: pointer;position: absolute;top: 35%;left: 300px;}  
 .summary .total span em{font-size: 24px;}
 .summary .calculate{padding: 0 0 15px 0;float: right;}
 .summary .calculate .continueBuy{color: #666;height: 37px;line-height: 37px;margin-left: 10px;font-size: 14px;text-align: center;width: 122px;background: url('../image/cartXuebi.gif') no-repeat -160px 0;padding: 10px 22px;}

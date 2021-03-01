@@ -127,6 +127,9 @@
 .cartProduct thead tr {
   width: 980px; }
 
+.cartProduct thead th:nth-last-child(1) {
+  width: 16px; }
+
 .cartProduct th {
   border-top: 1px solid #DCDFE4;
   border-bottom: 1px solid #B7B7B7;
@@ -151,13 +154,17 @@
 
 .cartProduct tbody .white-space {
   background-color: white;
-  height: 21px; }
+  height: 25px;
+  line-height: 25px; }
 
-.cartProduct tbody tr {
-  background-color: #fff; }
+.cartProduct tbody td {
+  background-color: #fff;
+  padding-bottom: 20px;
+  text-align: center; }
 
 .cartProduct tbody tr.selected {
-  background: #F8F8F8; }
+  background: #F8F8F8;
+  position: relative; }
 
 .cartProduct tbody .selected .white-space-w {
   width: 16px;
@@ -198,12 +205,18 @@
   cursor: auto;
   background: url(../image/cartsprite.png) no-repeat -85px 0px; }
 
+.cartProduct tbody .num .decrease:hover {
+  background: url(../image/cartsprite.png) no-repeat -69px 0px; }
+
 .cartProduct tbody .num .increase {
   width: 17px;
   height: 20px;
   float: left;
   cursor: pointer;
   background: url(../image/cartsprite.png) no-repeat; }
+
+.cartProduct tbody .num .increase:hover {
+  background: url(../image/cartsprite.png) no-repeat -17px 0px; }
 
 .cartProduct tbody .cheap {
   text-align: center; }
@@ -217,41 +230,41 @@
 
 .cartProduct tbody .operate {
   cursor: pointer;
-  text-align: center;
-  position: relative; }
+  text-align: center; }
 
-.cartProduct tbody .operate .delAlert {
+.cartProduct tbody .selected .delAlert {
   font-size: 12px;
   background-color: #fff;
   position: absolute;
-  z-index: 99;
   display: none;
-  width: 150px;
-  margin-left: -72px;
-  margin-top: -100px;
+  width: 135px;
+  height: 60px;
+  margin-left: -137px;
+  margin-top: -84px;
   border: 1px solid #A10000;
-  text-align: left; }
+  text-align: left;
+  position: relative; }
 
-.cartProduct tbody .operate .delAlert .msg {
+.cartProduct tbody .selected .delAlert .msg {
   padding: 10px 0 0 15px; }
 
-.cartProduct tbody .operate .delAlert .button {
+.cartProduct tbody .selected .delAlert .button {
   margin: 10px 0;
   text-align: center; }
 
-.cartProduct tbody .operate .delAlert .button a {
+.cartProduct tbody .selected .delAlert .button a {
   margin-right: 10px;
   cursor: pointer; }
 
-.cartProduct tbody .operate .delAlert .triangle {
+.cartProduct tbody .selected .delAlert .triangle {
   position: absolute;
-  overflow: hidden;
   background-position: 0 0;
   height: 8px;
-  width: 9px;
+  width: 17px;
   left: 65%;
   bottom: -8px;
-  background: url(../image/icon-shopping.gif); }
+  background: url(../image/icon-shopping.gif);
+  overflow: hidden; }
 
 .summary {
   padding: 12px 10px 10px 0;
@@ -284,7 +297,7 @@
   position: absolute;
   z-index: 99;
   display: none;
-  width: 150px;
+  width: 160px;
   margin-left: 0px;
   margin-top: -75px;
   border: 1px solid #A10000;
@@ -337,7 +350,7 @@
   cursor: pointer;
   position: absolute;
   top: 35%;
-  left: 270px; }
+  left: 300px; }
 
 .summary .total span em {
   font-size: 24px; }

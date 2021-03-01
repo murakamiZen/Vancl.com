@@ -47,6 +47,13 @@ task('script',async ()=>{
   .pipe(load.connect.reload())
 })
 
+// 处理json
+task('json',async ()=>{
+  src('./data/*.json')
+  .pipe(dest('./dist/data'))
+  .pipe(load.connect.reload())
+})
+
 // 处理img
 task('image',async ()=>{
   src('./image/*.*')
@@ -69,10 +76,11 @@ task('watch',async ()=>{
   watch('./style/*.scss',series('sass'))
   watch('./script/*.js',series('script'))
   watch('./image/*.*',series('image'))
+  watch('./data/*.*',series('json'))
 })
 
 // 打包（开发环境）
-task('dev',series('delDist','html','sass','script','image'))
+task('dev',series('delDist','html','sass','script','image','json'))
 
 // 启动项目
 task('start',series('dev','reload','watch'))

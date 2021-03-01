@@ -57,35 +57,50 @@
               <th>小计</th>
               <th>操作</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody class="tbody">
             <tr class="white-space"></tr>
+            <!-- 渲染数据 -->
             <!-- <tr class="selected">
               <td class="white-space-w"></td>
-              <td class="choose"><input type="checkbox"></td>
-              <td class="photo"><img src="../image/cart1.jpg" alt=""></td>
-              <td class="goodsInfo">针织衫圆领 棉线可机洗 男款 姜黄	</td>
+              <td class="choose"><input type="checkbox" data-id="${item.id}"></td>
+              <td class="photo"><img src="${item.imgurl}" alt=""></td>
+              <td class="goodsInfo">${item.title}</td>
               <td class="size">L</td>
-              <td class="price">￥178</td>
+              <td class="price">￥${item.salePrice}</td>
               <td class="num">
                 <div>
-                  <a class="decrease">-</a>
-                  <input type="text" value="1">
-                  <a class="increase">+</a>
+                  <a class="decrease" data-id="${item.id}"></a>
+                  <input type="number" min="0" max="100" value=${obj.num} >
+                  <a class="increase" data-id="${item.id}"></a>
                 </div>
               </td>
               <td class="cheap">-</td>
-              <td class="subtotal">￥178</td>
-              <td class="operate">删除</td>
+              <td class="subtotal">
+                <div class="subVal">￥${(item.salePrice * obj.num).toFixed(1)}</div>
+              </td>
+              <td class="operate" data-id="${item.id}">删除 </td>
+              <td>
+                <div class="delAlert">
+                  <p class="msg">确定要删除此商品吗</p>
+                  <p class="button">
+                    <a class="yes">确定</a>
+                    <a class="cancle">取消</a>
+                  </p>
+                  <span class="triangle"></span>
+                </div>  
+              </td>
+              
               <td class="white-space-w"></td>
-            </tr>-->
+            </tr> -->
             <tr class="white-space emptyGoods"></tr>
           </tbody>
         </table>
         <div class="summary clearfix">
           <div class="delAlert">
-            <p class="msg">确定要删除此商品吗</p>
+            <p class="msg">确定要删除勾选的商品吗</p>
             <p class="button">
               <a class="yes">确定</a>
               <a class="cancle">取消</a>
@@ -95,9 +110,7 @@
           <div class="bar">
             <input type="checkbox" id="all-choice">
             <label for="all-choice">全选</label>
-            <a class="del">删除
-                  
-            </a>
+            <a class="del">删除</a>
             <span>数量总计 : 
               <em>0</em> <p>件</p> 
             </span>
